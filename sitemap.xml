@@ -6,4 +6,18 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- Blog Listing Page -->
+  <url>
+    <loc>https://wanderwheelsrentals.in/blogs.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://wanderwheelsrentals.in/bangalore-to-varkala-weekend-escape-guide.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
