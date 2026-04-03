@@ -269,11 +269,26 @@
                 <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors"
                     href="#contact">Contact</a>
             </div>
-            <a href="https://wa.me/918129522024?text=Hi%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20and%20book%20a%20bike."
-                target="_blank" data-booking-modal
-                class="inline-block text-center bg-secondary text-on-secondary px-6 py-2 rounded-xl font-headline font-bold text-sm uppercase scale-95 active:scale-90 transition-transform hover:opacity-80">
-                Book Now
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/918129522024?text=Hi%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20and%20book%20a%20bike."
+                    target="_blank" data-booking-modal
+                    class="inline-block text-center bg-secondary text-on-secondary px-6 py-2 rounded-xl font-headline font-bold text-sm uppercase scale-95 active:scale-90 transition-transform hover:opacity-80">
+                    Book Now
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-primary-container hover:bg-surface-container transition-colors" aria-label="Open menu">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-outline-variant/20 shadow-lg">
+            <div class="flex flex-col px-6 py-4 space-y-3">
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a43d23] py-2" href="#">Bikes &amp; Scooters</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2" href="price-calculator.html">Price Calculator</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2" href="blogs.html">Blog</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2" href="#faq">FAQ</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2" href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
     <main class="pt-16">
@@ -310,10 +325,10 @@
                             class="inline-block text-center bg-secondary text-on-secondary px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:scale-105 active:scale-95">
                             Start Your Journey
                         </a>
-                        <button
-                            class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:bg-white/20">
-                            View Fleet
-                        </button>
+                        <a href="price-calculator.html"
+                            class="inline-block text-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:bg-white/20 hover:scale-105 active:scale-95">
+                            <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">calculate</span> Calculate Price</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1080,6 +1095,22 @@
     </div>
 
     <script>
+        // ── Mobile Menu Toggle ───────────────────────────────────────
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.textContent = isOpen ? 'menu' : 'close';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+            });
+        });
+
         // Clone reviews for infinite scroll
         const reviewsTrack = document.getElementById('reviewsTrack');
         if (reviewsTrack) {
