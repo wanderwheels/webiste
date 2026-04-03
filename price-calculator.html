@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script>if(location.hostname!=='localhost'&&location.hostname!=='127.0.0.1'&&location.protocol!=='https:')location.replace('https:'+location.href.slice(location.protocol.length));</script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bike Rental Price Calculator | Wander Wheels Varkala</title>
+    <meta name="description"
+        content="Estimate your bike or scooter rental cost in Varkala. Enter your dates and get an instant price quote from Wander Wheels.">
+    <meta name="keywords"
+        content="bike rental price varkala, scooter rental cost, wander wheels pricing, varkala bike rent rate">
+    <link rel="canonical" href="https://wanderwheelsrentals.in/price-calculator">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#ffdad6",
+                        "secondary": "#a43d23",
+                        "tertiary": "#251300",
+                        "on-tertiary-fixed": "#2b1702",
+                        "surface-container-highest": "#e3e2e3",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e3e2e3",
+                        "on-secondary-fixed": "#3c0700",
+                        "surface-container-low": "#f4f3f4",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7a97a3",
+                        "surface": "#faf9fa",
+                        "on-tertiary-fixed-variant": "#5b4225",
+                        "on-secondary-fixed-variant": "#83260e",
+                        "primary-fixed-dim": "#adcbd8",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf9fa",
+                        "secondary-container": "#ff8162",
+                        "surface-container-high": "#e9e8e8",
+                        "on-secondary-container": "#731a04",
+                        "on-background": "#1a1c1c",
+                        "background": "#faf9fa",
+                        "tertiary-fixed": "#ffdcbb",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f0f1",
+                        "primary": "#001a22",
+                        "outline-variant": "#c2c7ca",
+                        "on-surface-variant": "#42484a",
+                        "inverse-surface": "#2f3031",
+                        "primary-container": "#112f39",
+                        "on-primary-fixed-variant": "#2e4b55",
+                        "surface-container": "#eeedee",
+                        "on-primary-fixed": "#001f28",
+                        "tertiary-fixed-dim": "#e5c09b",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed-dim": "#ffb4a2",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3d270d",
+                        "inverse-primary": "#adcbd8",
+                        "primary-fixed": "#c9e7f4",
+                        "surface-tint": "#46626e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdad2",
+                        "outline": "#72787b",
+                        "on-tertiary-container": "#ae8d6b"
+                    },
+                    fontFamily: {
+                        "headline": ["Spline Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body text-on-surface">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/60 dark:bg-slate-900/60 backdrop-blur-md shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/logomark.svg" alt="Wander Wheels Logo" class="h-8 w-auto dark:invert">
+                <span class="text-xl font-black text-[#112f39] dark:text-slate-100 italic font-headline">Wander
+                    Wheels</span>
+            </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors"
+                    href="index.html">Bikes &amp; Scooters</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a43d23] border-b-2 border-[#a43d23] pb-1"
+                    href="#">Price Calculator</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors"
+                    href="blogs.html">Blog</a>
+            </div>
+            <a href="https://wa.me/918129522024?text=Hi%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20and%20book%20a%20bike."
+                target="_blank"
+                class="inline-block text-center bg-secondary text-on-secondary px-6 py-2 rounded-xl font-headline font-bold text-sm uppercase scale-95 active:scale-90 transition-transform hover:opacity-80">
+                Book Now
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20">
+        <div class="max-w-2xl mx-auto px-6">
+            <!-- Page Header -->
+            <div class="text-center mb-10">
+                <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-2">Wander Wheels · Varkala</p>
+                <h1 class="text-3xl md:text-4xl font-headline font-black text-primary-container mb-3">Price Calculator</h1>
+                <p class="text-on-surface-variant text-sm max-w-md mx-auto">Get an estimated rental cost for your Varkala trip. Enter your dates and we'll calculate the price instantly.</p>
+            </div>
+
+            <!-- Calculator Card -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-outline-variant/30">
+                <!-- Form Section -->
+                <div class="px-8 py-8 space-y-6">
+                    <!-- Pickup -->
+                    <div>
+                        <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">trip_origin</span> Pickup
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="startDate" class="block text-[11px] text-on-surface-variant mb-1">Date</label>
+                                <input type="date" id="startDate" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                            </div>
+                            <div>
+                                <label for="startTime" class="block text-[11px] text-on-surface-variant mb-1">Time</label>
+                                <input type="time" id="startTime" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Drop-off -->
+                    <div>
+                        <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">flag</span> Drop-off
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="endDate" class="block text-[11px] text-on-surface-variant mb-1">Date</label>
+                                <input type="date" id="endDate" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                            </div>
+                            <div>
+                                <label for="endTime" class="block text-[11px] text-on-surface-variant mb-1">Time</label>
+                                <input type="time" id="endTime" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Vehicles -->
+                    <div>
+                        <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">electric_moped</span> Number of Vehicles
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <button type="button" id="decVehicles" class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">−</button>
+                            <span id="vehicleCount" class="text-3xl font-headline font-black text-primary-container w-10 text-center tabular-nums">1</span>
+                            <button type="button" id="incVehicles" class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">+</button>
+                            <span class="text-sm text-on-surface-variant">bike(s) / scooter(s)</span>
+                        </div>
+                    </div>
+                    <!-- Calculate Button -->
+                    <button type="button" id="calculateBtn" class="w-full bg-primary-container text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-3 text-sm">
+                        <span class="material-symbols-outlined text-lg">calculate</span>
+                        Calculate Estimated Price
+                    </button>
+                </div>
+
+                <!-- Result Section (hidden by default) -->
+                <div id="resultSection" style="display:none">
+                    <!-- Duration pill -->
+                    <div class="mx-8 mb-4 bg-surface-container-low rounded-xl px-4 py-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings:'FILL' 1;">schedule</span>
+                        <span id="durationText" class="text-sm font-bold text-primary-container"></span>
+                    </div>
+
+                    <!-- Price Breakdown -->
+                    <div class="mx-8 mb-6 bg-surface-container-low rounded-xl overflow-hidden">
+                        <div class="px-5 py-4 border-b border-outline-variant/20">
+                            <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Price Breakdown</p>
+                            <div id="breakdownList" class="space-y-2 text-sm"></div>
+                        </div>
+                        <div class="px-5 py-4 bg-primary-container flex justify-between items-center">
+                            <span class="text-white/80 font-headline font-bold text-sm uppercase tracking-wider">Estimated Total</span>
+                            <span id="totalPrice" class="text-2xl font-headline font-black text-white"></span>
+                        </div>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div class="mx-8 mb-6 flex items-start gap-3 bg-tertiary-fixed/30 rounded-xl px-4 py-3">
+                        <span class="material-symbols-outlined text-tertiary-container text-lg mt-0.5 shrink-0">info</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">
+                            This is an <strong>estimated quote</strong> based on standard rates. Actual pricing may vary based on vehicle availability, season, and specific requirements. For an accurate quote, request one below and we'll confirm on WhatsApp.
+                        </p>
+                    </div>
+
+                    <!-- Pricing Info -->
+                    <div class="mx-8 mb-6 grid grid-cols-2 gap-3">
+                        <div class="bg-surface-container-low rounded-xl px-4 py-3 text-center">
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Weekday Rate</p>
+                            <p class="text-lg font-headline font-black text-primary-container" id="displayWeekdayRate"></p>
+                            <p class="text-[10px] text-on-surface-variant">Mon – Thu</p>
+                        </div>
+                        <div class="bg-surface-container-low rounded-xl px-4 py-3 text-center">
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Weekend Rate</p>
+                            <p class="text-lg font-headline font-black text-primary-container" id="displayWeekendRate"></p>
+                            <p class="text-[10px] text-on-surface-variant">Fri – Sun</p>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp CTA -->
+                    <div class="px-8 pb-8">
+                        <button type="button" id="requestQuoteBtn" class="w-full bg-secondary text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-3 text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Request Actual Quote on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minimum Rental Note -->
+            <p class="text-center text-xs text-on-surface-variant mt-6">Minimum rental period is 12 hours, charged as a full day.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="w-full pt-16 pb-8 bg-[#112f39] dark:bg-slate-950 text-white dark:text-slate-400 font-['Manrope'] text-sm font-light leading-relaxed">
+        <div class="flex flex-col md:flex-row justify-between items-start px-8 md:px-16 gap-8 max-w-7xl mx-auto">
+            <div class="max-w-xs">
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="assets/logomark.svg" alt="Wander Wheels Logo" class="h-8 w-auto invert brightness-0">
+                    <span class="text-lg font-bold text-white tracking-widest uppercase block">Wander Wheels</span>
+                </div>
+                <p class="text-slate-300">The most trusted bike and scooter rental service in Varkala, Kerala. Ride with
+                    confidence, explore with style.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-secondary uppercase tracking-widest">Fleet</span>
+                    <ul class="space-y-2">
+                        <li><a class="text-slate-300 hover:text-white transition-colors">Honda Activa</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors">Honda Dio</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors">Yamaha Ray</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-secondary uppercase tracking-widest">Help</span>
+                    <ul class="space-y-2">
+                        <li><a class="text-slate-300 hover:text-white transition-colors" href="blogs.html">Blog</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors" href="index.html#faq">FAQ</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors" href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mt-16 pt-8 border-t border-white/5 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
+            <p class="text-slate-500">&copy; 2026 Wander Wheels Varkala.</p>
+            <div class="flex gap-6">
+                <a href="https://www.instagram.com/wander_wheels_varkala/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow Wander Wheels on Instagram"
+                    class="text-slate-400 hover:text-secondary-container transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ══════════════════════════════════════════════════════════════
+         * PRICING CONFIGURATION — Edit these variables to update rates
+         * ══════════════════════════════════════════════════════════════ */
+        const PRICING = {
+            WEEKDAY_RATE: 600,        // Per bike per day (Mon–Thu)
+            WEEKEND_RATE: 700,        // Per bike per day (Fri–Sun)
+            HALF_DAY_RATE: 300,       // Extra hours (≤6h) on weekdays only
+            MIN_RENTAL_HOURS: 12,     // Minimum rental period in hours
+            WHATSAPP_NUMBER: '918129522024',
+        };
+        /* ══════════════════════════════════════════════════════════════ */
+
+        // Display rates on page
+        document.getElementById('displayWeekdayRate').textContent = `₹${PRICING.WEEKDAY_RATE}/day`;
+        document.getElementById('displayWeekendRate').textContent = `₹${PRICING.WEEKEND_RATE}/day`;
+
+        let vehicles = 1;
+        const vehicleCountEl = document.getElementById('vehicleCount');
+
+        // Set min dates
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('startDate').min = today;
+        document.getElementById('endDate').min = today;
+        document.getElementById('startTime').value = '09:00';
+        document.getElementById('endTime').value = '09:00';
+
+        // Vehicle counter
+        document.getElementById('decVehicles').addEventListener('click', () => {
+            if (vehicles > 1) { vehicles--; vehicleCountEl.textContent = vehicles; }
+        });
+        document.getElementById('incVehicles').addEventListener('click', () => {
+            if (vehicles < 10) { vehicles++; vehicleCountEl.textContent = vehicles; }
+        });
+
+        // Sync end date min with start date
+        document.getElementById('startDate').addEventListener('change', function () {
+            document.getElementById('endDate').min = this.value;
+            if (document.getElementById('endDate').value < this.value)
+                document.getElementById('endDate').value = this.value;
+        });
+
+        // Check if a date falls on a weekend (Fri=5, Sat=6, Sun=0)
+        function isWeekend(date) {
+            const day = date.getDay();
+            return day === 5 || day === 6 || day === 0;
+        }
+
+        // Get day name
+        function getDayName(date) {
+            return date.toLocaleDateString('en-IN', { weekday: 'short' });
+        }
+
+        // Format date
+        function fmtDate(d) {
+            return new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
+        // Format time
+        function fmtTime(t) {
+            const [h, m] = t.split(':');
+            const hr = parseInt(h), ampm = hr >= 12 ? 'PM' : 'AM';
+            return `${hr % 12 || 12}:${m} ${ampm}`;
+        }
+
+        // Calculate price
+        document.getElementById('calculateBtn').addEventListener('click', () => {
+            const sd = document.getElementById('startDate').value;
+            const st = document.getElementById('startTime').value;
+            const ed = document.getElementById('endDate').value;
+            const et = document.getElementById('endTime').value;
+
+            if (!sd || !st || !ed || !et) {
+                alert('Please fill in all date and time fields.');
+                return;
+            }
+
+            const startDT = new Date(`${sd}T${st}`);
+            const endDT = new Date(`${ed}T${et}`);
+            const diffMs = endDT - startDT;
+
+            if (diffMs <= 0) {
+                alert('Drop-off date/time must be after pickup date/time.');
+                return;
+            }
+
+            const totalHours = diffMs / 36e5;
+
+            // Minimum rental period check — under 12 hours charged as 1 full day
+            if (totalHours < PRICING.MIN_RENTAL_HOURS) {
+                // Charge as 1 full day based on pickup day
+                const rate = isWeekend(startDT) ? PRICING.WEEKEND_RATE : PRICING.WEEKDAY_RATE;
+                const dayType = isWeekend(startDT) ? 'Weekend' : 'Weekday';
+                const perBike = rate;
+                const total = perBike * vehicles;
+
+                showResult(
+                    totalHours,
+                    [{ label: `1 day min. charge (${dayType} — ${getDayName(startDT)})`, rate: rate, qty: 1 }],
+                    perBike,
+                    total
+                );
+                return;
+            }
+
+            // Calculate day-by-day pricing
+            // Walk through each 24-hour slot from pickup time
+            const fullDays = Math.floor(totalHours / 24);
+            const extraHours = totalHours % 24;
+
+            const breakdown = [];
+            let perBikeTotal = 0;
+
+            // For each full day, determine if it's a weekend or weekday
+            for (let i = 0; i < fullDays; i++) {
+                const dayDate = new Date(startDT.getTime() + i * 24 * 60 * 60 * 1000);
+                const weekend = isWeekend(dayDate);
+                const rate = weekend ? PRICING.WEEKEND_RATE : PRICING.WEEKDAY_RATE;
+                const dayType = weekend ? 'Weekend' : 'Weekday';
+                breakdown.push({
+                    label: `Day ${i + 1} — ${getDayName(dayDate)} (${dayType})`,
+                    rate: rate,
+                    qty: 1
+                });
+                perBikeTotal += rate;
+            }
+
+            // Handle extra hours beyond full days
+            if (extraHours > 0) {
+                const extraDayDate = new Date(startDT.getTime() + fullDays * 24 * 60 * 60 * 1000);
+                const weekendExtra = isWeekend(extraDayDate);
+
+                if (extraHours <= 6 && !weekendExtra) {
+                    // Half-day charge on weekdays only
+                    breakdown.push({
+                        label: `+${Math.ceil(extraHours)} hr extra — ${getDayName(extraDayDate)} (Half-day)`,
+                        rate: PRICING.HALF_DAY_RATE,
+                        qty: 1
+                    });
+                    perBikeTotal += PRICING.HALF_DAY_RATE;
+                } else {
+                    // Full day charge: weekend extras or >6 hours
+                    const rate = weekendExtra ? PRICING.WEEKEND_RATE : PRICING.WEEKDAY_RATE;
+                    const reason = weekendExtra ? 'Weekend — full charge' : 'Over 6 hrs — full day';
+                    breakdown.push({
+                        label: `+${Math.ceil(extraHours)} hr extra — ${getDayName(extraDayDate)} (${reason})`,
+                        rate: rate,
+                        qty: 1
+                    });
+                    perBikeTotal += rate;
+                }
+            }
+
+            const total = perBikeTotal * vehicles;
+            showResult(totalHours, breakdown, perBikeTotal, total);
+        });
+
+        function showResult(totalHours, breakdown, perBikeTotal, total) {
+            // Duration text
+            const days = Math.floor(totalHours / 24);
+            const hrs = Math.round(totalHours % 24);
+            let durLabel = '';
+            if (days > 0) durLabel += `${days} day${days > 1 ? 's' : ''}`;
+            if (hrs > 0) durLabel += `${days > 0 ? ' ' : ''}${hrs} hr${hrs > 1 ? 's' : ''}`;
+            document.getElementById('durationText').textContent = `Duration: ${durLabel || '< 1 hour'}`;
+
+            // Breakdown list
+            const breakdownEl = document.getElementById('breakdownList');
+            breakdownEl.innerHTML = '';
+            breakdown.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'flex justify-between items-center text-on-surface';
+                row.innerHTML = `
+                    <span class="text-on-surface-variant">${item.label}</span>
+                    <span class="font-bold font-headline">₹${item.rate}</span>
+                `;
+                breakdownEl.appendChild(row);
+            });
+
+            // Per-bike subtotal if multiple vehicles
+            if (vehicles > 1) {
+                const subRow = document.createElement('div');
+                subRow.className = 'flex justify-between items-center text-on-surface pt-2 mt-2 border-t border-outline-variant/20';
+                subRow.innerHTML = `
+                    <span class="text-on-surface-variant">Per bike subtotal</span>
+                    <span class="font-bold font-headline">₹${perBikeTotal}</span>
+                `;
+                breakdownEl.appendChild(subRow);
+
+                const mulRow = document.createElement('div');
+                mulRow.className = 'flex justify-between items-center text-on-surface';
+                mulRow.innerHTML = `
+                    <span class="text-on-surface-variant">× ${vehicles} vehicles</span>
+                    <span class="font-bold font-headline">₹${total}</span>
+                `;
+                breakdownEl.appendChild(mulRow);
+            }
+
+            // Total
+            document.getElementById('totalPrice').textContent = `₹${total.toLocaleString('en-IN')}`;
+
+            // Show result section
+            document.getElementById('resultSection').style.display = 'block';
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // WhatsApp CTA
+        document.getElementById('requestQuoteBtn').addEventListener('click', () => {
+            const sd = document.getElementById('startDate').value;
+            const st = document.getElementById('startTime').value;
+            const ed = document.getElementById('endDate').value;
+            const et = document.getElementById('endTime').value;
+            const totalText = document.getElementById('totalPrice').textContent;
+            const durationText = document.getElementById('durationText').textContent;
+
+            const msg =
+`Hi! I used the Price Calculator on your website and would like to request an actual quote.
+
+Pickup  : ${fmtDate(sd)} at ${fmtTime(st)}
+Drop-off: ${fmtDate(ed)} at ${fmtTime(et)}
+${durationText}
+Vehicles: ${vehicles} bike${vehicles > 1 ? 's' : ''} / scooter${vehicles > 1 ? 's' : ''}
+
+Estimated Price: ${totalText}
+
+Please confirm availability and the actual pricing. Thank you!`;
+
+            window.open(`https://wa.me/${PRICING.WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+    </script>
+</body>
+
+</html>
