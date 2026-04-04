@@ -13,6 +13,8 @@
 ## Pages
 
 - [Home](https://wanderwheelsrentals.in/): Main landing page. Covers fleet overview (Honda Activa, Honda Dio, Yamaha Ray), pricing starting ₹600/day, booking via WhatsApp, customer reviews (4.9/5 on Google Maps), FAQ, and contact details.
+- [Places to Visit in Varkala](https://wanderwheelsrentals.in/places-to-visit-in-varkala.html): An interactive travel guide mapping top attractions like Varkala Cliff, Kappil Beach, Jatayu Earth Center, Mangrove adventures, and local toddy shops.
+- [Price Calculator](https://wanderwheelsrentals.in/price-calculator.html): Instant online price estimation for long and short-term scooter rentals based on user dates and durations.
 - [Blog](https://wanderwheelsrentals.in/blogs.html): Travel guides and tips for exploring Varkala and Kerala by two-wheeler.
 - [Bangalore to Varkala Weekend Escape Guide (2026)](https://wanderwheelsrentals.in/bangalore-to-varkala-weekend-escape-guide.html): Detailed travel guide covering train/bus routes, best time to visit, 3-day itinerary, and how to rent a bike on arrival in Varkala.
 

@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script>if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1' && location.protocol !== 'https:') location.replace('https:' + location.href.slice(location.protocol.length));</script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Places to Visit in Varkala | Top Attractions & Hidden Gems (2026) | Wander Wheels</title>
+    <meta name="description"
+        content="Discover the best places to visit in Varkala — from the iconic Varkala Cliff and Sivagiri Mutt to Jatayu Earth Center, Mangrove Adventures, and hidden local gems. Plan your perfect Varkala trip.">
+    <meta name="keywords"
+        content="places to visit in varkala, varkala tourist places, varkala cliff, jatayu earth center, sivagiri, varkala attractions, things to do in varkala, mangrove adventures varkala, kaveri elephant park, varkala sightseeing">
+    <link rel="canonical" href="https://wanderwheelsrentals.in/places-to-visit-in-varkala.html">
+    <meta property="og:title" content="Places to Visit in Varkala | Top Attractions & Hidden Gems">
+    <meta property="og:description"
+        content="Explore the best tourist places in Varkala — cliffs, temples, adventure parks, and local food spots. Your complete Varkala sightseeing guide.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://wanderwheelsrentals.in/places-to-visit-in-varkala.html">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#a43d23",
+                        "tertiary": "#251300",
+                        "surface-container-highest": "#e3e2e3",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e3e2e3",
+                        "surface-container-low": "#f4f3f4",
+                        "on-primary-container": "#7a97a3",
+                        "surface": "#faf9fa",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf9fa",
+                        "secondary-container": "#ff8162",
+                        "surface-container-high": "#e9e8e8",
+                        "on-secondary-container": "#731a04",
+                        "on-background": "#1a1c1c",
+                        "background": "#faf9fa",
+                        "on-primary": "#ffffff",
+                        "primary": "#001a22",
+                        "outline-variant": "#c2c7ca",
+                        "on-surface-variant": "#42484a",
+                        "inverse-surface": "#2f3031",
+                        "primary-container": "#112f39",
+                        "surface-container": "#eeedee",
+                        "on-surface": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#adcbd8",
+                        "primary-fixed": "#c9e7f4",
+                        "surface-tint": "#46626e",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#72787b",
+                        "on-tertiary-container": "#ae8d6b"
+                    },
+                    fontFamily: {
+                        "headline": ["Spline Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+        }
+
+        /* Place card styles */
+        .place-card {
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .place-card:hover {
+            border-color: #c2c7ca;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(17, 47, 57, 0.08);
+        }
+
+        .place-card.active {
+            border-color: #a43d23;
+            box-shadow: 0 8px 30px rgba(164, 61, 35, 0.15);
+        }
+
+        .place-card.active .place-card-indicator {
+            background: #a43d23;
+        }
+
+        .place-card .place-card-expand {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .place-card.active .place-card-expand {
+            max-height: 300px;
+            opacity: 1;
+        }
+
+        .place-card .card-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .place-card.active .card-chevron {
+            transform: rotate(180deg);
+        }
+
+        /* Map marker pulse */
+        .marker-pulse {
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(164, 61, 35, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(164, 61, 35, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(164, 61, 35, 0);
+            }
+        }
+
+        /* Custom Leaflet marker */
+        .custom-marker {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: #112f39;
+            border: 3px solid #fff;
+            transform: rotate(-45deg);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .custom-marker.active-marker {
+            background: #a43d23;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 0 0 6px rgba(164, 61, 35, 0.25), 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000 !important;
+        }
+
+        .custom-marker .marker-icon {
+            transform: rotate(45deg);
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(45deg) translate(-50%, -50%);
+            transform-origin: 0 0;
+        }
+
+        .custom-marker.active-marker .marker-icon {
+            font-size: 16px;
+        }
+
+        /* Map container */
+        #varkalaMap {
+            border-radius: 1rem;
+        }
+
+        .leaflet-popup-content-wrapper {
+            border-radius: 16px !important;
+            font-family: 'Manrope', sans-serif;
+            padding: 0 !important;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .leaflet-popup-content {
+            margin: 0 !important;
+            width: 260px !important;
+        }
+
+        .leaflet-popup-tip {
+            border-top-color: #fff;
+        }
+
+        .map-popup-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .map-popup-body {
+            padding: 14px 16px 16px;
+        }
+
+        .map-popup-name {
+            font-family: 'Spline Sans', sans-serif;
+            font-weight: 800;
+            color: #112f39;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .map-popup-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background: rgba(201, 231, 244, 0.4);
+            color: #112f39;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .map-popup-desc {
+            font-size: 12px;
+            color: #42484a;
+            line-height: 1.5;
+        }
+
+        .leaflet-popup-close-button {
+            color: #fff !important;
+            font-size: 18px !important;
+            top: 8px !important;
+            right: 10px !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Sticky map on desktop */
+        @media (min-width: 1024px) {
+            .map-sticky {
+                position: sticky;
+                top: 100px;
+            }
+        }
+
+        /* Mobile horizontal scroll cards */
+        @media (max-width: 1023px) {
+            #placeCards {
+                display: flex;
+                flex-direction: row;
+                gap: 16px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 12px;
+                scrollbar-width: none;
+            }
+
+            #placeCards::-webkit-scrollbar {
+                display: none;
+            }
+
+            #placeCards .place-card {
+                min-width: 300px;
+                max-width: 300px;
+                flex-shrink: 0;
+                scroll-snap-align: center;
+            }
+
+            /* On mobile, expand is always visible for all cards */
+            #placeCards .place-card .place-card-expand {
+                max-height: 300px;
+                opacity: 1;
+            }
+
+            /* Hide chevron on mobile since scroll controls selection */
+            #placeCards .place-card .card-chevron {
+                display: none;
+            }
+
+            /* Mobile map height */
+            #varkalaMap {
+                height: 350px !important;
+            }
+
+            /* Scroll indicator dots */
+            .scroll-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 12px;
+            }
+
+            .scroll-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #c2c7ca;
+                transition: all 0.3s ease;
+            }
+
+            .scroll-dot.active {
+                background: #a43d23;
+                width: 24px;
+                border-radius: 4px;
+            }
+
+            /* Mobile scroll nav arrows */
+            .scroll-nav {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .scroll-dots {
+                display: none;
+            }
+
+            .scroll-nav {
+                display: none;
+            }
+        }
+
+        /* Scroll nav button styles */
+        .scroll-nav-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(17, 47, 57, 0.08);
+            border: 1px solid rgba(194, 199, 202, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #42484a;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+
+        .scroll-nav-btn:hover {
+            background: rgba(17, 47, 57, 0.15);
+            color: #112f39;
+        }
+
+        .scroll-nav-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes modal-in {
+            from { opacity: 0; transform: scale(0.96) translateY(10px); }
+            to   { opacity: 1; transform: scale(1)    translateY(0);     }
+        }
+        .booking-modal-card { animation: modal-in 0.2s ease-out forwards; }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristDestination",
+        "name": "Varkala",
+        "description": "Varkala is a stunning coastal town in Kerala, India, famous for its dramatic cliffs, pristine beaches, ancient temples, and vibrant culture. Discover top places to visit in Varkala including Varkala Cliff, Sivagiri Mutt, Jatayu Earth Center, and more.",
+        "url": "https://wanderwheelsrentals.in/places-to-visit-in-varkala.html",
+        "touristType": ["Beach Lover", "Adventure Seeker", "Culture Enthusiast", "Nature Explorer"],
+        "includesAttraction": [
+            { "@type": "TouristAttraction", "name": "Varkala Cliff", "description": "Iconic red laterite cliff overlooking the Arabian Sea, lined with cafes and shops." },
+            { "@type": "TouristAttraction", "name": "Jatayu Earth's Center", "description": "World's largest bird sculpture and adventure park atop a rocky hilltop." },
+            { "@type": "TouristAttraction", "name": "Sivagiri Mutt", "description": "Sacred pilgrimage site and ashram of the revered social reformer Sree Narayana Guru." },
+            { "@type": "TouristAttraction", "name": "Mangrove Adventures", "description": "Kayaking through lush mangrove tunnels near Nedungolam." },
+            { "@type": "TouristAttraction", "name": "Kaveri Elephant Park", "description": "Family-friendly elephant interaction and nature experience." },
+            { "@type": "TouristAttraction", "name": "Kariyilakkallu Toddy Shop", "description": "Authentic Kerala toddy parlour serving local delicacies." },
+            { "@type": "TouristAttraction", "name": "Kappil Beach", "description": "Pristine beach where the Kappil Lake meets the Arabian Sea, offering serene beauty." }
+        ]
+    }
+    </script>
+</head>
+
+<body class="bg-background font-body text-on-surface">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/60 dark:bg-slate-900/60 backdrop-blur-md shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logomark.svg" alt="Wander Wheels Logo" class="h-8 w-auto dark:invert">
+                    <span class="text-xl font-black text-[#112f39] dark:text-slate-100 italic font-headline">Wander
+                        Wheels</span>
+                </a>
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] hover:text-[#a43d23] transition-colors"
+                    href="index.html">Bikes & Scooters</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] hover:text-[#a43d23] transition-colors"
+                    href="price-calculator.html">Price Calculator</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a43d23] border-b-2 border-[#a43d23] pb-1"
+                    href="places-to-visit-in-varkala.html">Places</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] hover:text-[#a43d23] transition-colors"
+                    href="blogs.html">Blog</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] hover:text-[#a43d23] transition-colors"
+                    href="index.html#contact">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/918129522024?text=Hi%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20and%20book%20a%20bike."
+                    target="_blank" data-booking-modal
+                    class="inline-block text-center bg-secondary text-on-secondary px-6 py-2 rounded-xl font-headline font-bold text-sm uppercase scale-95 active:scale-90 transition-transform hover:opacity-80">
+                    Book Now
+                </a>
+                <button id="mobileMenuBtn"
+                    class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-primary-container hover:bg-surface-container transition-colors"
+                    aria-label="Open menu">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-outline-variant/20 shadow-lg">
+            <div class="flex flex-col px-6 py-4 space-y-3">
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] py-2"
+                    href="index.html">Bikes & Scooters</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] py-2"
+                    href="price-calculator.html">Price Calculator</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a43d23] py-2"
+                    href="places-to-visit-in-varkala.html">Places</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] py-2"
+                    href="blogs.html">Blog</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] py-2"
+                    href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <!-- Hero Header -->
+        <header class="max-w-7xl mx-auto px-6 mb-12 mt-8">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-4 py-1 bg-secondary-container/20 rounded-full mb-6">
+                    <span class="material-symbols-outlined text-secondary text-sm"
+                        style="font-variation-settings: 'FILL' 1;">explore</span>
+                    <span class="text-secondary font-headline font-bold text-xs uppercase tracking-widest">Varkala
+                        Travel Guide</span>
+                </div>
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-headline font-black text-primary-container leading-tight mb-8">
+                    Places to Visit in Varkala
+                </h1>
+                <p class="text-lg text-on-surface-variant font-light leading-relaxed mb-6">
+                    Varkala is one of Kerala's most captivating coastal towns, where towering red laterite cliffs meet
+                    the shimmering Arabian Sea. Unlike the crowded beaches of Goa, Varkala offers a serene blend of
+                    natural beauty, spiritual heritage, and off-the-beaten-path adventures. From the world-famous
+                    Varkala Cliff promenade lined with bohemian cafes to the ancient Janardanaswamy Temple that dates
+                    back over 2,000 years, this little town packs a remarkable amount of diversity into a compact
+                    stretch of coastline.
+                </p>
+                <p class="text-lg text-on-surface-variant font-light leading-relaxed mb-8">
+                    Whether you are a solo backpacker seeking cliff-top sunsets, a family looking for cultural
+                    excursions, or an adventure junkie craving kayaking through emerald mangrove tunnels, Varkala has
+                    something unforgettable waiting. The best way to explore these scattered gems? Rent a bike or
+                    scooter and ride at your own pace — no waiting for autos, no haggling over fares. Here is our
+                    curated guide to the top places to visit in Varkala and its stunning surroundings.
+                </p>
+                <div
+                    class="flex items-center gap-4 text-on-surface-variant text-sm font-bold uppercase tracking-widest">
+                    <span>By Wander Wheels Team</span>
+                    <span>•</span>
+                    <span>6 min read</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Interactive Map + Place Cards Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Map (shows first on mobile, right on desktop) -->
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="map-sticky">
+                        <div class="bg-white rounded-2xl shadow-sm border border-outline-variant/20 overflow-hidden">
+                            <div class="px-6 py-4 border-b border-outline-variant/20 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-secondary"
+                                        style="font-variation-settings: 'FILL' 1;">map</span>
+                                    <span
+                                        class="font-headline font-bold text-primary-container text-sm uppercase tracking-widest">Varkala
+                                        & Surroundings</span>
+                                </div>
+                                <span id="activeLocationLabel"
+                                    class="text-xs text-secondary font-bold uppercase tracking-wider">Varkala
+                                    Cliff</span>
+                            </div>
+                            <div id="varkalaMap" style="height: 520px; width: 100%;"></div>
+                        </div>
+                        <p class="text-xs text-on-surface-variant/60 mt-3 text-center hidden lg:block">Click a place
+                            card to highlight it on the map</p>
+                    </div>
+                </div>
+
+                <!-- Place Cards (horizontal scroll on mobile, vertical on desktop) -->
+                <div class="lg:col-span-5 lg:space-y-4 order-2 lg:order-1" id="placeCards">
+
+                    <!-- Card 1: Varkala Cliff -->
+                    <div class="place-card bg-white rounded-2xl p-6 shadow-sm active" data-place="varkala-cliff"
+                        id="card-varkala-cliff">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="place-card-indicator w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white text-xl"
+                                        style="font-variation-settings: 'FILL' 1;">landscape</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-headline font-bold text-primary-container">Varkala Cliff
+                                    </h2>
+                                    <p class="text-xs text-on-surface-variant mt-1">Iconic cliff · 0 km from town</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined card-chevron text-on-surface-variant text-xl mt-1">expand_more</span>
+                        </div>
+                        <div class="place-card-expand">
+                            <div class="pt-4 border-t border-outline-variant/20 mt-4">
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-3">The Varkala Cliff, also
+                                    known as Varkala Formation, is a breathtaking stretch of red laterite sedimentary
+                                    cliffs along the Arabian Sea coast. The cliff-top promenade is lined with bohemian
+                                    cafes, Ayurvedic spas, handicraft shops, and offers jaw-dropping sunset views. It is
+                                    a geological marvel declared a national geo-heritage site by the Geological Survey
+                                    of India.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Sunsets</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Cafes</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Geo
+                                        Heritage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Jatayu Earth Center -->
+                    <div class="place-card bg-white rounded-2xl p-6 shadow-sm" data-place="jatayu" id="card-jatayu">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="place-card-indicator w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white text-xl"
+                                        style="font-variation-settings: 'FILL' 1;">paragliding</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-headline font-bold text-primary-container">Jatayu Earth's
+                                        Center</h2>
+                                    <p class="text-xs text-on-surface-variant mt-1">Adventure park · 35 km</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined card-chevron text-on-surface-variant text-xl mt-1">expand_more</span>
+                        </div>
+                        <div class="place-card-expand">
+                            <div class="pt-4 border-t border-outline-variant/20 mt-4">
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Home to the world's
+                                    largest bird sculpture (200 ft long, 150 ft wide, 70 ft tall), Jatayu Earth's Center
+                                    is a stunning blend of mythology, adventure, and architecture perched atop a rocky
+                                    hilltop in Chadayamangalam. The park features a cable car ride, adventure activities
+                                    including rappelling, paintball, and rock climbing, plus a digital museum and 6D
+                                    theatre.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Adventure</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Cable
+                                        Car</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Sculpture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Sivagiri Mutt -->
+                    <div class="place-card bg-white rounded-2xl p-6 shadow-sm" data-place="sivagiri" id="card-sivagiri">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="place-card-indicator w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white text-xl"
+                                        style="font-variation-settings: 'FILL' 1;">temple_hindu</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-headline font-bold text-primary-container">Sivagiri Mutt
+                                    </h2>
+                                    <p class="text-xs text-on-surface-variant mt-1">Pilgrimage · 2 km</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined card-chevron text-on-surface-variant text-xl mt-1">expand_more</span>
+                        </div>
+                        <div class="place-card-expand">
+                            <div class="pt-4 border-t border-outline-variant/20 mt-4">
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Sivagiri Mutt is the
+                                    sacred ashram and final resting place of Sree Narayana Guru, one of Kerala's most
+                                    revered social reformers. Perched on the scenic Sivagiri hill, the peaceful campus
+                                    features the Guru's samadhi, a serene garden, and a museum dedicated to his life and
+                                    teachings. The annual Sivagiri Pilgrimage in December–January draws devotees from
+                                    across the country.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Spiritual</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Heritage</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Peaceful</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Mangrove Adventures -->
+                    <div class="place-card bg-white rounded-2xl p-6 shadow-sm" data-place="mangrove" id="card-mangrove">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="place-card-indicator w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white text-xl"
+                                        style="font-variation-settings: 'FILL' 1;">kayaking</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-headline font-bold text-primary-container">Mangrove
+                                        Adventures</h2>
+                                    <p class="text-xs text-on-surface-variant mt-1">Kayaking · 18 km</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined card-chevron text-on-surface-variant text-xl mt-1">expand_more</span>
+                        </div>
+                        <div class="place-card-expand">
+                            <div class="pt-4 border-t border-outline-variant/20 mt-4">
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Nestled near Nedungolam,
+                                    the Mangrove Adventures offers an enchanting kayaking experience through natural
+                                    green tunnels formed by dense mangrove forests. Paddle through serene backwaters
+                                    surrounded by rich biodiversity — kingfishers, egrets, and crabs inhabit these
+                                    emerald waterways. It is one of the most peaceful and unique activities near
+                                    Varkala.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Kayaking</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Nature</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Backwaters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Kariyilakkallu Toddy Shop -->
+                    <div class="place-card bg-white rounded-2xl p-6 shadow-sm" data-place="toddy" id="card-toddy">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="place-card-indicator w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white text-xl"
+                                        style="font-variation-settings: 'FILL' 1;">local_bar</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-headline font-bold text-primary-container">Kariyilakkallu
+                                        Toddy Shop</h2>
+                                    <p class="text-xs text-on-surface-variant mt-1">Local cuisine · 12 km</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined card-chevron text-on-surface-variant text-xl mt-1">expand_more</span>
+                        </div>
+                        <div class="place-card-expand">
+                            <div class="pt-4 border-t border-outline-variant/20 mt-4">
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-3">For an authentic taste
+                                    of Kerala, Kariyilakkallu Toddy Shop is a must-visit. This legendary local
+                                    establishment serves fresh, naturally fermented toddy (palm wine) paired with fiery
+                                    Kerala-style fish curry, tapioca, and spicy beef or duck roast. It is a raw,
+                                    no-frills dining experience that gives you a genuine glimpse into Kerala's culinary
+                                    soul.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Food</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Toddy</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Local
+                                        Culture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Kaveri Elephant Park -->
+                    <div class="place-card bg-white rounded-2xl p-6 shadow-sm" data-place="elephant" id="card-elephant">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="place-card-indicator w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white text-xl"
+                                        style="font-variation-settings: 'FILL' 1;">pets</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-headline font-bold text-primary-container">Kaveri Elephant
+                                        Park</h2>
+                                    <p class="text-xs text-on-surface-variant mt-1">Wildlife · 28 km</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined card-chevron text-on-surface-variant text-xl mt-1">expand_more</span>
+                        </div>
+                        <div class="place-card-expand">
+                            <div class="pt-4 border-t border-outline-variant/20 mt-4">
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Kaveri Elephant Park
+                                    offers a heartwarming experience for families and animal lovers. Set amidst lush
+                                    tropical greenery, the park lets visitors interact with gentle temple elephants —
+                                    from feeding sessions and baths to short rides through the surrounding forest
+                                    trails. It is a peaceful, educational outing that children and adults alike will
+                                    cherish.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Family</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Elephants</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Nature</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Kappil Beach -->
+                    <div class="place-card bg-white rounded-2xl p-6 shadow-sm" data-place="kappil" id="card-kappil">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="place-card-indicator w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-white text-xl"
+                                        style="font-variation-settings: 'FILL' 1;">beach_access</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-headline font-bold text-primary-container">Kappil Beach</h2>
+                                    <p class="text-xs text-on-surface-variant mt-1">Beach & lake · 10 km</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-symbols-outlined card-chevron text-on-surface-variant text-xl mt-1">expand_more</span>
+                        </div>
+                        <div class="place-card-expand">
+                            <div class="pt-4 border-t border-outline-variant/20 mt-4">
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Kappil Beach is a hidden
+                                    gem where the tranquil Kappil Lake meets the Arabian Sea, creating a mesmerizing
+                                    landscape. A narrow strip of golden sand separates the backwaters from the ocean,
+                                    offering visitors a unique dual-view experience. Far less crowded than Varkala Cliff
+                                    Beach, it is the perfect spot for a peaceful evening ride along the coastal road,
+                                    with stunning sunset views over the lake.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Beach</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Lake</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-fixed/30 text-primary-container text-[10px] font-bold rounded-full uppercase">Sunset</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile scroll controls: dots + arrows -->
+                <div class="order-3 lg:hidden flex items-center justify-center gap-4 mt-3">
+                    <button class="scroll-nav scroll-nav-btn" id="scrollLeft" aria-label="Previous place">
+                        <span class="material-symbols-outlined text-lg">chevron_left</span>
+                    </button>
+                    <div class="scroll-dots" id="scrollDots">
+                        <div class="scroll-dot active" data-dot="varkala-cliff"></div>
+                        <div class="scroll-dot" data-dot="jatayu"></div>
+                        <div class="scroll-dot" data-dot="sivagiri"></div>
+                        <div class="scroll-dot" data-dot="mangrove"></div>
+                        <div class="scroll-dot" data-dot="toddy"></div>
+                        <div class="scroll-dot" data-dot="elephant"></div>
+                        <div class="scroll-dot" data-dot="kappil"></div>
+                    </div>
+                    <button class="scroll-nav scroll-nav-btn" id="scrollRight" aria-label="Next place">
+                        <span class="material-symbols-outlined text-lg">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Varkala Section -->
+        <section class="py-24 bg-surface-container-low">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <span class="inline-flex items-center gap-2 px-4 py-1 bg-secondary-container/20 rounded-full mb-6">
+                        <span class="material-symbols-outlined text-secondary text-sm"
+                            style="font-variation-settings: 'FILL' 1;">info</span>
+                        <span class="text-secondary font-headline font-bold text-xs uppercase tracking-widest">About
+                            Varkala</span>
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-headline font-black text-primary-container mb-8">Why Varkala
+                        Should Be on Every Traveler's List</h2>
+                    <p class="text-lg text-on-surface-variant font-light leading-relaxed mb-6">
+                        Tucked along the southwestern coast of Kerala, Varkala is a destination that defies easy
+                        categorization. It is a beach town, a spiritual retreat, an adventure base camp, and a food
+                        lover's paradise — all rolled into one. The town's crown jewel is the Varkala Cliff (Varkala
+                        Formation), a dramatic geological wonder where ochre-red cliffs drop vertically into the
+                        turquoise sea. This 15-million-year-old formation is one of India's national geo-heritage sites.
+                    </p>
+                    <p class="text-lg text-on-surface-variant font-light leading-relaxed mb-6">
+                        Beyond the cliff, Varkala's hinterland is dotted with coconut groves, rice paddies, and winding
+                        laterite roads that are a joy to explore on two wheels. The nearby Jatayu Earth's Center is a
+                        world-record-holding adventure park, while the Mangrove tunnels of Nedungolam offer kayaking
+                        experiences straight out of a nature documentary. For those seeking spiritual solace, the
+                        ancient Janardanaswamy Temple (over 2,000 years old) and the serene Sivagiri Mutt provide
+                        moments of deep reflection.
+                    </p>
+                    <p class="text-lg text-on-surface-variant font-light leading-relaxed">
+                        Varkala is also a culinary destination in its own right. From fresh seafood platters at
+                        cliff-top cafes to the raw, authentic experience of a local toddy shop like Kariyilakkallu, the
+                        flavors here are bold and unforgettable. Whether you are planning a weekend escape from
+                        Bangalore, a week-long Kerala itinerary, or a solo soul-searching trip, Varkala rewards every
+                        kind of traveler. And the best way to experience it all? On a rented bike from Wander Wheels —
+                        pick it up at the station and ride into your own adventure.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-primary-container relative">
+            <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+                <h2 class="text-4xl md:text-5xl font-headline font-black text-white mb-8 tracking-tighter">Explore Every
+                    Corner of Varkala on Two Wheels</h2>
+                <p class="text-slate-300 mb-12 text-lg font-light">The best places in Varkala are not on main roads.
+                    Rent a scooter and discover them at your own pace.</p>
+                <a href="https://wa.me/918129522024?text=Hi%2C%20I%20want%20to%20rent%20a%20bike%20to%20explore%20Varkala%20attractions!"
+                    target="_blank" data-booking-modal
+                    class="inline-block text-center w-full sm:w-auto bg-secondary-container text-on-secondary-container px-10 py-5 rounded-xl font-headline font-extrabold text-lg uppercase tracking-wider transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-black/20">
+                    Rent a Bike Now
+                </a>
+            </div>
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div
+                    class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-high py-12 border-t border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <img src="assets/logomark.svg" alt="Wander Wheels Logo" class="h-6 w-auto grayscale opacity-70">
+                <span class="text-lg font-black text-on-surface-variant italic font-headline">Wander Wheels</span>
+            </div>
+            <p class="text-on-surface-variant text-sm mb-6">The Best Bike & Scooter Rentals in Varkala, Kerala.</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="blogs.html"
+                    class="text-on-surface-variant hover:text-secondary transition-colors text-sm font-bold">Blog</a>
+                <a href="places-to-visit-in-varkala.html"
+                    class="text-on-surface-variant hover:text-secondary transition-colors text-sm font-bold">Places to
+                    Visit</a>
+                <a href="#"
+                    class="text-on-surface-variant hover:text-secondary transition-colors text-sm font-bold">Terms of
+                    Service</a>
+                <a href="#"
+                    class="text-on-surface-variant hover:text-secondary transition-colors text-sm font-bold">Privacy
+                    Policy</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="https://www.instagram.com/wander_wheels_varkala/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow Wander Wheels on Instagram"
+                    class="text-on-surface-variant hover:text-secondary transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="text-on-surface-variant/60 text-xs">&copy; 2026 Wander Wheels. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // ── Mobile Menu ──
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.textContent = isOpen ? 'menu' : 'close';
+        });
+
+        // ── Place Data ──
+        const places = {
+            'varkala-cliff': {
+                name: 'Varkala Cliff', lat: 8.7332, lng: 76.7106, icon: 'landscape',
+                badge: 'Geo Heritage',
+                img: 'assets/varkala.webp',
+                desc: 'Iconic red laterite cliffs with cliff-top cafes, Ayurvedic spas, and world-class sunset views.'
+            },
+            'jatayu': {
+                name: "Jatayu Earth's Center", lat: 8.8623, lng: 76.8767, icon: 'paragliding',
+                badge: 'Adventure Park',
+                img: 'assets/jatayu-image.webp',
+                desc: "World's largest bird sculpture with cable car, rappelling, rock climbing, and a 6D theatre."
+            },
+            'sivagiri': {
+                name: 'Sivagiri Mutt', lat: 8.7364, lng: 76.7247, icon: 'temple_hindu',
+                badge: 'Pilgrimage',
+                img: 'assets/sivagiri-mutt-varkala-place.webp',
+                desc: 'Sacred ashram of Sree Narayana Guru with peaceful gardens and a museum.'
+            },
+            'mangrove': {
+                name: 'Mangrove Adventures', lat: 8.839171655923504, lng: 76.67558764379875, icon: 'kayaking',
+                badge: 'Kayaking',
+                img: 'assets/mangrove-kayaking.webp',
+                desc: 'Kayak through emerald mangrove tunnels surrounded by kingfishers and rich wildlife.'
+            },
+            'toddy': {
+                name: 'Kariyilakkallu Toddy Shop', lat: 8.84544127148782, lng: 76.68808577633652, icon: 'local_bar',
+                badge: 'Local Food',
+                img: 'assets/Kariyilakallu-varkala-place.webp',
+                desc: 'Legendary toddy parlour serving fresh palm wine with fiery fish curry and tapioca.'
+            },
+            'elephant': {
+                name: 'Kaveri Elephant Park', lat: 8.818285973105803, lng: 76.7138003567549, icon: 'pets',
+                badge: 'Wildlife',
+                img: 'assets/kaveri-elephant-park-varkala-place.webp',
+                desc: 'Interact with gentle temple elephants — feeding, bathing, and forest trail rides.'
+            },
+            'kappil': {
+                name: 'Kappil Beach', lat: 8.781511658473248, lng: 76.67418651601238, icon: 'beach_access',
+                badge: 'Beach & Lake',
+                img: 'assets/kappil-beach-varkala-place.webp',
+                desc: 'Hidden gem where Kappil Lake meets the Arabian Sea — golden sand and stunning sunsets.'
+            }
+        };
+
+        // ── Initialize Leaflet Map ──
+        const map = L.map('varkalaMap', {
+            center: [8.78, 76.76],
+            zoom: 11,
+            zoomControl: true,
+            scrollWheelZoom: true
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+        }).addTo(map);
+
+        // ── Build popup HTML ──
+        function buildPopupHTML(place) {
+            return `<img class="map-popup-img" src="${place.img}" alt="${place.name}" loading="lazy">
+                    <div class="map-popup-body">
+                        <span class="map-popup-badge">${place.badge}</span>
+                        <div class="map-popup-name">${place.name}</div>
+                        <div class="map-popup-desc">${place.desc}</div>
+                    </div>`;
+        }
+
+        // ── Create Custom Markers ──
+        const markers = {};
+        Object.entries(places).forEach(([key, place]) => {
+            const isActive = key === 'varkala-cliff';
+            const markerIcon = L.divIcon({
+                className: '',
+                html: `<div class="custom-marker ${isActive ? 'active-marker' : ''}" id="marker-${key}">
+                           <span class="marker-icon material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">${place.icon}</span>
+                       </div>`,
+                iconSize: [isActive ? 40 : 32, isActive ? 40 : 32],
+                iconAnchor: [isActive ? 20 : 16, isActive ? 40 : 32]
+            });
+
+            const marker = L.marker([place.lat, place.lng], { icon: markerIcon }).addTo(map);
+            marker.bindPopup(buildPopupHTML(place), { maxWidth: 260, minWidth: 260, className: '' });
+            marker.on('click', () => selectPlace(key));
+            markers[key] = marker;
+        });
+
+        // Open the default active popup after a brief delay
+        setTimeout(() => { markers['varkala-cliff'].openPopup(); }, 800);
+
+        // ── Select Place Logic ──
+        let activePlace = 'varkala-cliff';
+
+        function deselectPlace() {
+            if (!activePlace) return;
+
+            // Remove active from card
+            const prevCard = document.getElementById(`card-${activePlace}`);
+            if (prevCard) prevCard.classList.remove('active');
+
+            // Close popup
+            map.closePopup();
+
+            // Reset all markers to default
+            Object.entries(places).forEach(([key, place]) => {
+                const newIcon = L.divIcon({
+                    className: '',
+                    html: `<div class="custom-marker" id="marker-${key}">
+                               <span class="marker-icon material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">${place.icon}</span>
+                           </div>`,
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32]
+                });
+                markers[key].setIcon(newIcon);
+            });
+
+            // Reset map to overview
+            map.flyTo([8.78, 76.76], 11, { duration: 1.2 });
+
+            // Update label
+            document.getElementById('activeLocationLabel').textContent = 'All Places';
+
+            // Reset dots
+            document.querySelectorAll('.scroll-dot').forEach(dot => dot.classList.remove('active'));
+
+            activePlace = null;
+        }
+
+        function selectPlace(placeKey) {
+            // Deactivate current
+            if (activePlace) {
+                const prevCard = document.getElementById(`card-${activePlace}`);
+                if (prevCard) prevCard.classList.remove('active');
+            }
+
+            // Activate new
+            activePlace = placeKey;
+            const newCard = document.getElementById(`card-${placeKey}`);
+            if (newCard) {
+                newCard.classList.add('active');
+                newCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // Update marker icons (recreate to update size)
+            Object.entries(places).forEach(([key, place]) => {
+                const isActive = key === placeKey;
+                const newIcon = L.divIcon({
+                    className: '',
+                    html: `<div class="custom-marker ${isActive ? 'active-marker' : ''}" id="marker-${key}">
+                               <span class="marker-icon material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">${place.icon}</span>
+                           </div>`,
+                    iconSize: [isActive ? 40 : 32, isActive ? 40 : 32],
+                    iconAnchor: [isActive ? 20 : 16, isActive ? 40 : 32]
+                });
+                markers[key].setIcon(newIcon);
+            });
+
+            // Pan map
+            const place = places[placeKey];
+            map.flyTo([place.lat, place.lng], 13, { duration: 1.2 });
+
+            // Open image popup after fly animation
+            setTimeout(() => { markers[placeKey].openPopup(); }, 1300);
+
+            // Update label
+            document.getElementById('activeLocationLabel').textContent = place.name;
+
+            // Update dots
+            document.querySelectorAll('.scroll-dot').forEach(dot => {
+                dot.classList.toggle('active', dot.dataset.dot === placeKey);
+            });
+        }
+
+        // ── Card Click Handlers (toggle select/deselect) ──
+        document.querySelectorAll('.place-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const placeKey = card.dataset.place;
+                if (activePlace === placeKey) {
+                    // Already active — deselect it
+                    deselectPlace();
+                } else {
+                    // Select this place
+                    selectPlace(placeKey);
+                    // On mobile, scroll the clicked card into center view
+                    if (window.innerWidth < 1024) {
+                        card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
+                }
+            });
+        });
+
+        // ── Mobile: IntersectionObserver for scroll-based card activation ──
+        function setupMobileScrollObserver() {
+            if (window.innerWidth >= 1024) return;
+
+            const cardsContainer = document.getElementById('placeCards');
+            const cards = cardsContainer.querySelectorAll('.place-card');
+            let isScrolling = false;
+            let scrollTimeout;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+                        const placeKey = entry.target.dataset.place;
+                        if (placeKey && placeKey !== activePlace) {
+                            // Deactivate previous
+                            const prevCard = document.getElementById(`card-${activePlace}`);
+                            if (prevCard) prevCard.classList.remove('active');
+
+                            // Activate new
+                            activePlace = placeKey;
+                            entry.target.classList.add('active');
+
+                            // Update markers
+                            Object.entries(places).forEach(([key, place]) => {
+                                const isActive = key === placeKey;
+                                const newIcon = L.divIcon({
+                                    className: '',
+                                    html: `<div class="custom-marker ${isActive ? 'active-marker' : ''}" id="marker-${key}">
+                                               <span class="marker-icon material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">${place.icon}</span>
+                                           </div>`,
+                                    iconSize: [isActive ? 40 : 32, isActive ? 40 : 32],
+                                    iconAnchor: [isActive ? 20 : 16, isActive ? 40 : 32]
+                                });
+                                markers[key].setIcon(newIcon);
+                            });
+
+                            // Pan map
+                            const place = places[placeKey];
+                            map.flyTo([place.lat, place.lng], 13, { duration: 1.2 });
+
+                            // Update label
+                            document.getElementById('activeLocationLabel').textContent = place.name;
+
+                            // Update scroll dots
+                            document.querySelectorAll('.scroll-dot').forEach(dot => {
+                                dot.classList.toggle('active', dot.dataset.dot === placeKey);
+                            });
+                        }
+                    }
+                });
+            }, {
+                root: cardsContainer,
+                threshold: 0.6
+            });
+
+            cards.forEach(card => observer.observe(card));
+        }
+
+        // Initialize on load and resize
+        setupMobileScrollObserver();
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                map.invalidateSize();
+            }, 250);
+        });
+
+        // ── Mobile scroll arrow buttons ──
+        const placeKeys = Object.keys(places);
+        document.getElementById('scrollLeft').addEventListener('click', () => {
+            const idx = placeKeys.indexOf(activePlace);
+            if (idx > 0) {
+                const prevKey = placeKeys[idx - 1];
+                const prevCard = document.getElementById(`card-${prevKey}`);
+                if (prevCard) prevCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        });
+        document.getElementById('scrollRight').addEventListener('click', () => {
+            const idx = placeKeys.indexOf(activePlace);
+            if (idx < placeKeys.length - 1) {
+                const nextKey = placeKeys[idx + 1];
+                const nextCard = document.getElementById(`card-${nextKey}`);
+                if (nextCard) nextCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        });
+    </script>
+    
+    <!-- Booking Modal Base -->
+    <div id="bookingModal" style="display:none" class="fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+        <div id="bookingBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="booking-modal-card relative w-full max-w-md z-10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="bg-primary-container px-8 py-6 flex items-start justify-between">
+                <div>
+                    <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Wander Wheels · Varkala</p>
+                    <h3 id="bookingModalTitle" class="text-2xl font-headline font-black text-white">Book Your Ride</h3>
+                    <p class="text-slate-400 text-xs mt-1 font-light">Fill in the details — we'll confirm instantly on WhatsApp.</p>
+                </div>
+                <button id="closeBookingModal" class="text-white/50 hover:text-white transition-colors mt-1 shrink-0" aria-label="Close booking modal">
+                    <span class="material-symbols-outlined text-2xl">close</span>
+                </button>
+            </div>
+            <form id="bookingForm" class="bg-white px-8 py-7 space-y-6">
+                <div>
+                    <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">trip_origin</span> Pickup
+                    </p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label for="startDate" class="block text-[11px] text-on-surface-variant mb-1">Date</label>
+                            <input type="date" id="startDate" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                        </div>
+                        <div>
+                            <label for="startTime" class="block text-[11px] text-on-surface-variant mb-1">Time</label>
+                            <input type="time" id="startTime" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">flag</span> Return
+                    </p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label for="endDate" class="block text-[11px] text-on-surface-variant mb-1">Date</label>
+                            <input type="date" id="endDate" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                        </div>
+                        <div>
+                            <label for="endTime" class="block text-[11px] text-on-surface-variant mb-1">Time</label>
+                            <input type="time" id="endTime" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                        </div>
+                    </div>
+                </div>
+                <div id="durationPill" style="display:none" class="bg-surface-container-low rounded-xl px-4 py-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings:'FILL' 1;">schedule</span>
+                    <span id="durationText" class="text-sm font-bold text-primary-container"></span>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">electric_moped</span> Vehicles
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <button type="button" id="decVehicles" class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">−</button>
+                        <span id="vehicleCount" class="text-3xl font-headline font-black text-primary-container w-10 text-center tabular-nums">1</span>
+                        <button type="button" id="incVehicles" class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">+</button>
+                        <span class="text-sm text-on-surface-variant">bike(s) / scooter(s)</span>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-secondary text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-3 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Send Enquiry on WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Booking Modal Logic -->
+    <script>
+        const bookingModal    = document.getElementById('bookingModal');
+        const bookingBackdrop = document.getElementById('bookingBackdrop');
+        const closeBtn        = document.getElementById('closeBookingModal');
+        const bookingForm     = document.getElementById('bookingForm');
+        const vehicleCountEl  = document.getElementById('vehicleCount');
+        const durationPill    = document.getElementById('durationPill');
+        const durationText    = document.getElementById('durationText');
+        let vehicles = 1;
+
+        function openBookingModal() {
+            const card = bookingModal.querySelector('.booking-modal-card');
+            card.style.animation = 'none'; card.offsetHeight; card.style.animation = '';
+            bookingModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('startDate').min = today;
+            document.getElementById('endDate').min = today;
+            if (!document.getElementById('startTime').value) document.getElementById('startTime').value = '09:00';
+            if (!document.getElementById('endTime').value)   document.getElementById('endTime').value   = '09:00';
+        }
+        function closeBookingModal() {
+            bookingModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        closeBtn.addEventListener('click', closeBookingModal);
+        bookingBackdrop.addEventListener('click', closeBookingModal);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBookingModal(); });
+        document.querySelectorAll('[data-booking-modal]').forEach(el =>
+            el.addEventListener('click', e => { e.preventDefault(); openBookingModal(); })
+        );
+
+        document.getElementById('decVehicles').addEventListener('click', () => {
+            if (vehicles > 1) { vehicles--; vehicleCountEl.textContent = vehicles; }
+        });
+        document.getElementById('incVehicles').addEventListener('click', () => {
+            if (vehicles < 10) { vehicles++; vehicleCountEl.textContent = vehicles; }
+        });
+
+        function updateDuration() {
+            const sd = document.getElementById('startDate').value, st = document.getElementById('startTime').value;
+            const ed = document.getElementById('endDate').value,   et = document.getElementById('endTime').value;
+            if (!sd || !st || !ed || !et) { durationPill.style.display = 'none'; return; }
+            const diff = new Date(`${ed}T${et}`) - new Date(`${sd}T${st}`);
+            if (diff <= 0) { durationPill.style.display = 'none'; return; }
+            const totalHours = Math.floor(diff / 36e5), days = Math.floor(totalHours / 24), hrs = totalHours % 24;
+            let label = '';
+            if (days > 0) label += `${days} day${days > 1 ? 's' : ''}`;
+            if (hrs  > 0) label += `${days > 0 ? ' ' : ''}${hrs} hr${hrs > 1 ? 's' : ''}`;
+            durationText.textContent = `Duration: ${label || '< 1 hour'}`;
+            durationPill.style.display = 'flex';
+        }
+        ['startDate','startTime','endDate','endTime'].forEach(id =>
+            document.getElementById(id).addEventListener('change', updateDuration)
+        );
+        document.getElementById('startDate').addEventListener('change', function () {
+            document.getElementById('endDate').min = this.value;
+            if (document.getElementById('endDate').value < this.value) document.getElementById('endDate').value = this.value;
+            updateDuration();
+        });
+
+        function fmtDate(d) { return new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }); }
+        function fmtTime(t) { const [h, m] = t.split(':'), hr = parseInt(h); return `${hr % 12 || 12}:${m} ${hr >= 12 ? 'PM' : 'AM'}`; }
+
+        bookingForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const sd = document.getElementById('startDate').value, st = document.getElementById('startTime').value;
+            const ed = document.getElementById('endDate').value,   et = document.getElementById('endTime').value;
+            const diff = new Date(`${ed}T${et}`) - new Date(`${sd}T${st}`);
+            if (diff <= 0) { alert('Return date/time must be after pickup date/time.'); return; }
+            const totalHours = Math.floor(diff / 36e5), days = Math.floor(totalHours / 24), hrs = totalHours % 24;
+            let dur = '';
+            if (days > 0) dur += `${days} day${days > 1 ? 's' : ''}`;
+            if (hrs  > 0) dur += `${days > 0 ? ' ' : ''}${hrs} hr${hrs > 1 ? 's' : ''}`;
+            const msg =
+`Hi! I'd like to book a bike rental at Wander Wheels, Varkala.
+
+Pickup  : ${fmtDate(sd)} at ${fmtTime(st)}
+Return  : ${fmtDate(ed)} at ${fmtTime(et)}
+Duration: ${dur || '< 1 hour'}
+Vehicles: ${vehicles} bike${vehicles > 1 ? 's' : ''} / scooter${vehicles > 1 ? 's' : ''}
+
+Please confirm availability and pricing. Thank you!`;
+            window.open(`https://wa.me/918129522024?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+    </script>
+</body>
+</html>
