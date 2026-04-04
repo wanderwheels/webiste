@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <script>if(location.hostname!=='localhost'&&location.hostname!=='127.0.0.1'&&location.protocol!=='https:')location.replace('https:'+location.href.slice(location.protocol.length));</script>
+    <script>if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1' && location.protocol !== 'https:') location.replace('https:' + location.href.slice(location.protocol.length));</script>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Bike Rental Price Calculator | Wander Wheels Varkala</title>
+    <title>Price Calculator | Wander Wheels Varkala</title>
     <meta name="description"
         content="Estimate your bike or scooter rental cost in Varkala. Enter your dates and get an instant price quote from Wander Wheels.">
     <meta name="keywords"
@@ -117,18 +117,25 @@
                     class="inline-block text-center bg-secondary text-on-secondary px-6 py-2 rounded-xl font-headline font-bold text-sm uppercase scale-95 active:scale-90 transition-transform hover:opacity-80">
                     Book Now
                 </a>
-                <button id="mobileMenuBtn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-primary-container hover:bg-surface-container transition-colors" aria-label="Open menu">
+                <button id="mobileMenuBtn"
+                    class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-primary-container hover:bg-surface-container transition-colors"
+                    aria-label="Open menu">
                     <span class="material-symbols-outlined text-2xl">menu</span>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-outline-variant/20 shadow-lg">
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-outline-variant/20 shadow-lg">
             <div class="flex flex-col px-6 py-4 space-y-3">
-                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2" href="/">Bikes &amp; Scooters</a>
-                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a43d23] py-2" href="#">Price Calculator</a>
-                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2" href="/places-to-visit-in-varkala">Places</a>
-                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2" href="/blogs">Blog</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2"
+                    href="/">Bikes &amp; Scooters</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a43d23] py-2" href="#">Price
+                    Calculator</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2"
+                    href="/places-to-visit-in-varkala">Places</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2"
+                    href="/blogs">Blog</a>
             </div>
         </div>
     </nav>
@@ -138,8 +145,10 @@
             <!-- Page Header -->
             <div class="text-center mb-10">
                 <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-2">Wander Wheels · Varkala</p>
-                <h1 class="text-3xl md:text-4xl font-headline font-black text-primary-container mb-3">Price Calculator</h1>
-                <p class="text-on-surface-variant text-sm max-w-md mx-auto">Get an estimated rental cost for your Varkala trip. Enter your dates and we'll calculate the price instantly.</p>
+                <h1 class="text-3xl md:text-4xl font-headline font-black text-primary-container mb-3">Price Calculator
+                </h1>
+                <p class="text-on-surface-variant text-sm max-w-md mx-auto">Get an estimated rental cost for your
+                    Varkala trip. Enter your dates and we'll calculate the price instantly.</p>
             </div>
 
             <!-- Calculator Card -->
@@ -148,50 +157,66 @@
                 <div class="px-8 py-8 space-y-6">
                     <!-- Pickup -->
                     <div>
-                        <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">trip_origin</span> Pickup
+                        <p
+                            class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm"
+                                style="font-variation-settings:'FILL' 1;">trip_origin</span> Pickup
                         </p>
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label for="startDate" class="block text-[11px] text-on-surface-variant mb-1">Date</label>
-                                <input type="date" id="startDate" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <label for="startDate"
+                                    class="block text-[11px] text-on-surface-variant mb-1">Date</label>
+                                <input type="date" id="startDate" required
+                                    class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
                             </div>
                             <div>
-                                <label for="startTime" class="block text-[11px] text-on-surface-variant mb-1">Time</label>
-                                <input type="time" id="startTime" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <label for="startTime"
+                                    class="block text-[11px] text-on-surface-variant mb-1">Time</label>
+                                <input type="time" id="startTime" required
+                                    class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
                             </div>
                         </div>
                     </div>
                     <!-- Drop-off -->
                     <div>
-                        <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">flag</span> Drop-off
+                        <p
+                            class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm"
+                                style="font-variation-settings:'FILL' 1;">flag</span> Drop-off
                         </p>
                         <div class="grid grid-cols-2 gap-3">
                             <div>
                                 <label for="endDate" class="block text-[11px] text-on-surface-variant mb-1">Date</label>
-                                <input type="date" id="endDate" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <input type="date" id="endDate" required
+                                    class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
                             </div>
                             <div>
                                 <label for="endTime" class="block text-[11px] text-on-surface-variant mb-1">Time</label>
-                                <input type="time" id="endTime" required class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
+                                <input type="time" id="endTime" required
+                                    class="w-full border border-outline-variant rounded-xl px-3 py-2.5 text-on-surface text-sm focus:outline-none focus:border-secondary transition-colors">
                             </div>
                         </div>
                     </div>
                     <!-- Vehicles -->
                     <div>
-                        <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">electric_moped</span> Number of Vehicles
+                        <p
+                            class="text-xs font-bold text-secondary uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm"
+                                style="font-variation-settings:'FILL' 1;">electric_moped</span> Number of Vehicles
                         </p>
                         <div class="flex items-center gap-4">
-                            <button type="button" id="decVehicles" class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">−</button>
-                            <span id="vehicleCount" class="text-3xl font-headline font-black text-primary-container w-10 text-center tabular-nums">1</span>
-                            <button type="button" id="incVehicles" class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">+</button>
+                            <button type="button" id="decVehicles"
+                                class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">−</button>
+                            <span id="vehicleCount"
+                                class="text-3xl font-headline font-black text-primary-container w-10 text-center tabular-nums">1</span>
+                            <button type="button" id="incVehicles"
+                                class="w-10 h-10 rounded-full border-2 border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors flex items-center justify-center font-bold text-xl select-none leading-none">+</button>
                             <span class="text-sm text-on-surface-variant">bike(s) / scooter(s)</span>
                         </div>
                     </div>
                     <!-- Calculate Button -->
-                    <button type="button" id="calculateBtn" class="w-full bg-primary-container text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-3 text-sm">
+                    <button type="button" id="calculateBtn"
+                        class="w-full bg-primary-container text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-3 text-sm">
                         <span class="material-symbols-outlined text-lg">calculate</span>
                         Calculate Estimated Price
                     </button>
@@ -201,48 +226,64 @@
                 <div id="resultSection" style="display:none">
                     <!-- Duration pill -->
                     <div class="mx-8 mb-4 bg-surface-container-low rounded-xl px-4 py-3 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings:'FILL' 1;">schedule</span>
+                        <span class="material-symbols-outlined text-secondary text-base"
+                            style="font-variation-settings:'FILL' 1;">schedule</span>
                         <span id="durationText" class="text-sm font-bold text-primary-container"></span>
                     </div>
 
                     <!-- Price Breakdown -->
                     <div class="mx-8 mb-6 bg-surface-container-low rounded-xl overflow-hidden">
                         <div class="px-5 py-4 border-b border-outline-variant/20">
-                            <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Price Breakdown</p>
+                            <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Price Breakdown
+                            </p>
                             <div id="breakdownList" class="space-y-2 text-sm"></div>
                         </div>
                         <div class="px-5 py-4 bg-primary-container flex justify-between items-center">
-                            <span class="text-white/80 font-headline font-bold text-sm uppercase tracking-wider">Estimated Total</span>
+                            <span
+                                class="text-white/80 font-headline font-bold text-sm uppercase tracking-wider">Estimated
+                                Total</span>
                             <span id="totalPrice" class="text-2xl font-headline font-black text-white"></span>
                         </div>
                     </div>
 
                     <!-- Disclaimer -->
                     <div class="mx-8 mb-6 flex items-start gap-3 bg-tertiary-fixed/30 rounded-xl px-4 py-3">
-                        <span class="material-symbols-outlined text-tertiary-container text-lg mt-0.5 shrink-0">info</span>
+                        <span
+                            class="material-symbols-outlined text-tertiary-container text-lg mt-0.5 shrink-0">info</span>
                         <p class="text-xs text-on-surface-variant leading-relaxed">
-                            This is an <strong>estimated quote</strong> based on standard rates. Actual pricing may vary based on vehicle availability, season, and specific requirements. For an accurate quote, request one below and we'll confirm on WhatsApp.
+                            This is an <strong>estimated quote</strong> based on standard rates. Actual pricing may vary
+                            based on vehicle availability, season, and specific requirements. For an accurate quote,
+                            request one below and we'll confirm on WhatsApp.
                         </p>
                     </div>
 
                     <!-- Pricing Info -->
                     <div class="mx-8 mb-6 grid grid-cols-2 gap-3">
                         <div class="bg-surface-container-low rounded-xl px-4 py-3 text-center">
-                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Weekday Rate</p>
-                            <p class="text-lg font-headline font-black text-primary-container" id="displayWeekdayRate"></p>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">
+                                Weekday Rate</p>
+                            <p class="text-lg font-headline font-black text-primary-container" id="displayWeekdayRate">
+                            </p>
                             <p class="text-[10px] text-on-surface-variant">Mon – Thu</p>
                         </div>
                         <div class="bg-surface-container-low rounded-xl px-4 py-3 text-center">
-                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Weekend Rate</p>
-                            <p class="text-lg font-headline font-black text-primary-container" id="displayWeekendRate"></p>
+                            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">
+                                Weekend Rate</p>
+                            <p class="text-lg font-headline font-black text-primary-container" id="displayWeekendRate">
+                            </p>
                             <p class="text-[10px] text-on-surface-variant">Fri – Sun</p>
                         </div>
                     </div>
 
                     <!-- WhatsApp CTA -->
                     <div class="px-8 pb-8">
-                        <button type="button" id="requestQuoteBtn" class="w-full bg-secondary text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-3 text-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <button type="button" id="requestQuoteBtn"
+                            class="w-full bg-secondary text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-3 text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
                             Request Actual Quote on WhatsApp
                         </button>
                     </div>
@@ -250,7 +291,8 @@
             </div>
 
             <!-- Minimum Rental Note -->
-            <p class="text-center text-xs text-on-surface-variant mt-6">Minimum rental period is 12 hours, charged as a full day.</p>
+            <p class="text-center text-xs text-on-surface-variant mt-6">Minimum rental period is 12 hours, charged as a
+                full day.</p>
         </div>
     </main>
 
@@ -280,7 +322,8 @@
                     <ul class="space-y-2">
                         <li><a class="text-slate-300 hover:text-white transition-colors" href="/blogs">Blog</a></li>
                         <li><a class="text-slate-300 hover:text-white transition-colors" href="/#faq">FAQ</a></li>
-                        <li><a class="text-slate-300 hover:text-white transition-colors" href="/#contact">Contact</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors" href="/#contact">Contact</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -292,7 +335,11 @@
                 <a href="https://www.instagram.com/wander_wheels_varkala/" target="_blank" rel="noopener noreferrer"
                     aria-label="Follow Wander Wheels on Instagram"
                     class="text-slate-400 hover:text-secondary-container transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -530,7 +577,7 @@
             const durationText = document.getElementById('durationText').textContent;
 
             const msg =
-`Hi! I used the Price Calculator on your website and would like to request an actual quote.
+                `Hi! I used the Price Calculator on your website and would like to request an actual quote.
 
 Pickup  : ${fmtDate(sd)} at ${fmtTime(st)}
 Drop-off: ${fmtDate(ed)} at ${fmtTime(et)}
