@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script>if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1' && location.protocol !== 'https:') location.replace('https:' + location.href.slice(location.protocol.length));</script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Share Your Experience | Wander Wheels Varkala</title>
+    <meta name="description"
+        content="Tell us about your bike rental experience with Wander Wheels Varkala. Your feedback helps us serve you better.">
+    <link rel="canonical" href="https://wanderwheelsrentals.in/review">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#ffdad6",
+                        "secondary": "#a43d23",
+                        "tertiary": "#251300",
+                        "on-tertiary-fixed": "#2b1702",
+                        "surface-container-highest": "#e3e2e3",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e3e2e3",
+                        "on-secondary-fixed": "#3c0700",
+                        "surface-container-low": "#f4f3f4",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7a97a3",
+                        "surface": "#faf9fa",
+                        "on-tertiary-fixed-variant": "#5b4225",
+                        "on-secondary-fixed-variant": "#83260e",
+                        "primary-fixed-dim": "#adcbd8",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf9fa",
+                        "secondary-container": "#ff8162",
+                        "surface-container-high": "#e9e8e8",
+                        "on-secondary-container": "#731a04",
+                        "on-background": "#1a1c1c",
+                        "background": "#faf9fa",
+                        "tertiary-fixed": "#ffdcbb",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f0f1",
+                        "primary": "#001a22",
+                        "outline-variant": "#c2c7ca",
+                        "on-surface-variant": "#42484a",
+                        "inverse-surface": "#2f3031",
+                        "primary-container": "#112f39",
+                        "on-primary-fixed-variant": "#2e4b55",
+                        "surface-container": "#eeedee",
+                        "on-primary-fixed": "#001f28",
+                        "tertiary-fixed-dim": "#e5c09b",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed-dim": "#ffb4a2",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3d270d",
+                        "inverse-primary": "#adcbd8",
+                        "primary-fixed": "#c9e7f4",
+                        "surface-tint": "#46626e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdad2",
+                        "outline": "#72787b",
+                        "on-tertiary-container": "#ae8d6b"
+                    },
+                    fontFamily: {
+                        "headline": ["Spline Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fade-in 0.35s ease-out forwards;
+        }
+
+        .star-btn {
+            cursor: pointer;
+            transition: transform 0.15s ease, color 0.15s ease;
+        }
+
+        .star-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .star-btn.active .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            color: #f59e0b;
+        }
+
+        .option-btn {
+            transition: all 0.15s ease;
+        }
+
+        .option-btn.selected {
+            background-color: #112f39;
+            color: #ffffff;
+            border-color: #112f39;
+        }
+
+        .option-btn:not(.selected):hover {
+            border-color: #a43d23;
+            color: #a43d23;
+        }
+
+        .step-indicator .step-dot {
+            transition: all 0.2s ease;
+        }
+
+        .step-indicator .step-dot.active {
+            background-color: #a43d23;
+            width: 24px;
+            border-radius: 9999px;
+        }
+
+        .step-indicator .step-dot.done {
+            background-color: #112f39;
+        }
+
+        .copied-toast {
+            animation: fade-in 0.2s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body text-on-surface">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/60 dark:bg-slate-900/60 backdrop-blur-md shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <img src="assets/logomark.svg" alt="Wander Wheels Logo" class="h-8 w-auto dark:invert">
+                <span class="text-xl font-black text-[#112f39] dark:text-slate-100 italic font-headline">Wander
+                    Wheels</span>
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors"
+                    href="/">Bikes &amp; Scooters</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors"
+                    href="/price-calculator">Price Calculator</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors"
+                    href="/places-to-visit-in-varkala">Places</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors"
+                    href="/blogs">Blog</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/918129522024?text=Hi%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20and%20book%20a%20bike."
+                    target="_blank"
+                    class="inline-block text-center bg-secondary text-on-secondary px-6 py-2 rounded-xl font-headline font-bold text-sm uppercase scale-95 active:scale-90 transition-transform hover:opacity-80">
+                    Book Now
+                </a>
+                <button id="mobileMenuBtn"
+                    class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-primary-container hover:bg-surface-container transition-colors"
+                    aria-label="Open menu">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-outline-variant/20 shadow-lg">
+            <div class="flex flex-col px-6 py-4 space-y-3">
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2"
+                    href="/">Bikes &amp; Scooters</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2"
+                    href="/price-calculator">Price Calculator</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2"
+                    href="/places-to-visit-in-varkala">Places</a>
+                <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#112f39] dark:text-slate-300 hover:text-[#a43d23] transition-colors py-2"
+                    href="/blogs">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-2xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-4 py-1 bg-secondary/10 rounded-full mb-4">
+                    <span class="material-symbols-outlined text-secondary text-sm"
+                        style="font-variation-settings: 'FILL' 1;">rate_review</span>
+                    <span class="text-secondary font-headline font-bold text-xs uppercase tracking-widest">Your Feedback Matters</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-headline font-extrabold text-primary-container leading-tight tracking-tight">
+                    How Was Your Ride?
+                </h1>
+                <p class="text-on-surface-variant mt-3 max-w-md mx-auto">
+                    Help us improve by sharing your experience with Wander Wheels. It takes less than a minute.
+                </p>
+            </div>
+
+            <!-- Step Indicator -->
+            <div class="step-indicator flex items-center justify-center gap-2 mb-8" id="stepIndicator">
+                <div class="step-dot w-2.5 h-2.5 rounded-full bg-outline-variant active"></div>
+                <div class="step-dot w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+                <div class="step-dot w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+                <div class="step-dot w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+                <div class="step-dot w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+                <div class="step-dot w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+            </div>
+
+            <!-- Form Container -->
+            <div id="formContainer" class="bg-white rounded-2xl shadow-lg overflow-hidden">
+
+                <!-- Step 1: Bike Condition -->
+                <div class="step-panel fade-in" data-step="0">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 1 of 6</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the condition of the bike / scooter?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Excellent — looked brand new">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">verified</span>
+                            Excellent — looked brand new
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Good — well maintained">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_up</span>
+                            Good — well maintained
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Average — had some wear">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_neutral</span>
+                            Average — had some wear
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Poor — needs improvement">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_down</span>
+                            Poor — needs improvement
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Pickup & Drop-off -->
+                <div class="step-panel fade-in hidden" data-step="1">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 2 of 6</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the pickup & drop-off experience?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Super smooth and on time">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">schedule</span>
+                            Super smooth and on time
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Quick and hassle-free">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">bolt</span>
+                            Quick and hassle-free
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Had to wait a bit but okay">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">hourglass_top</span>
+                            Had to wait a bit but okay
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Needs improvement">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">feedback</span>
+                            Needs improvement
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Customer Support -->
+                <div class="step-panel fade-in hidden" data-step="2">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 3 of 6</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the customer support?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Friendly and very helpful">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_very_satisfied</span>
+                            Friendly and very helpful
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Responsive and professional">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">support_agent</span>
+                            Responsive and professional
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Okay but could be better">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_neutral</span>
+                            Okay but could be better
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Not satisfactory">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_dissatisfied</span>
+                            Not satisfactory
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Value for Money -->
+                <div class="step-panel fade-in hidden" data-step="3">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 4 of 6</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the pricing / value for money?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Great value — totally worth it">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">paid</span>
+                            Great value — totally worth it
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Fair pricing">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">balance</span>
+                            Fair pricing
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="A bit expensive">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">trending_up</span>
+                            A bit expensive
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Overpriced">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">money_off</span>
+                            Overpriced
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Would Recommend -->
+                <div class="step-panel fade-in hidden" data-step="4">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 5 of 6</p>
+                        <h2 class="text-xl font-headline font-bold text-white">Would you recommend Wander Wheels to others?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Absolutely, 100%!">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">favorite</span>
+                            Absolutely, 100%!
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Yes, would recommend">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_up</span>
+                            Yes, would recommend
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Maybe, depends on the situation">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">help</span>
+                            Maybe, depends on the situation
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Probably not">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_down</span>
+                            Probably not
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Overall Rating -->
+                <div class="step-panel fade-in hidden" data-step="5">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 6 of 6</p>
+                        <h2 class="text-xl font-headline font-bold text-white">Overall, how would you rate your experience?</h2>
+                    </div>
+                    <div class="px-8 py-10 flex flex-col items-center">
+                        <div class="flex gap-2 mb-4" id="starRating">
+                            <button type="button" class="star-btn" data-star="1">
+                                <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+                            </button>
+                            <button type="button" class="star-btn" data-star="2">
+                                <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+                            </button>
+                            <button type="button" class="star-btn" data-star="3">
+                                <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+                            </button>
+                            <button type="button" class="star-btn" data-star="4">
+                                <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+                            </button>
+                            <button type="button" class="star-btn" data-star="5">
+                                <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+                            </button>
+                        </div>
+                        <p id="ratingLabel" class="text-on-surface-variant text-sm">Tap a star to rate</p>
+                        <button type="button" id="submitRating"
+                            class="mt-8 w-full bg-secondary text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 text-sm opacity-40 pointer-events-none"
+                            disabled>
+                            Submit Review
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result: Below 5 Stars -->
+                <div class="step-panel fade-in hidden" id="resultLow">
+                    <div class="px-8 py-16 text-center">
+                        <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings:'FILL' 1;">handshake</span>
+                        </div>
+                        <h2 class="text-2xl font-headline font-extrabold text-primary-container mb-3">Thank You for Your Honest Feedback</h2>
+                        <p class="text-on-surface-variant max-w-sm mx-auto leading-relaxed">
+                            We're sorry the experience wasn't perfect. Your feedback is invaluable — we're committed to making your next ride with Wander Wheels even better.
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                            <a href="https://wa.me/918129522024?text=Hi%2C%20I%20have%20some%20feedback%20about%20my%20recent%20rental%20experience."
+                                target="_blank"
+                                class="inline-flex items-center justify-center gap-2 bg-primary-container text-white px-6 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-wider transition-all hover:opacity-90 active:scale-95">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Tell Us More
+                            </a>
+                            <a href="/"
+                                class="inline-flex items-center justify-center gap-2 border-2 border-outline-variant text-on-surface-variant px-6 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-wider transition-all hover:border-secondary hover:text-secondary active:scale-95">
+                                Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result: 5 Stars -->
+                <div class="step-panel fade-in hidden" id="resultHigh">
+                    <div class="px-8 py-10">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="material-symbols-outlined text-amber-500 text-4xl" style="font-variation-settings:'FILL' 1;">stars</span>
+                            </div>
+                            <h2 class="text-2xl font-headline font-extrabold text-primary-container mb-2">You're Awesome!</h2>
+                            <p class="text-on-surface-variant text-sm max-w-sm mx-auto">
+                                We've crafted a review based on your feedback. Copy it and share it on Google Reviews — it means the world to us!
+                            </p>
+                        </div>
+                        <!-- Generated Review -->
+                        <div class="bg-surface-container-low rounded-xl p-5 mb-5 relative">
+                            <div class="flex items-center gap-1 mb-3">
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                            </div>
+                            <p id="generatedReview" class="text-on-surface text-sm leading-relaxed"></p>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex flex-col gap-3">
+                            <button type="button" id="copyReviewBtn"
+                                class="w-full bg-primary-container text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 text-sm flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-lg">content_copy</span>
+                                Copy Review
+                            </button>
+                            <a id="googleReviewLink" href="#" target="_blank"
+                                class="w-full bg-secondary text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 text-sm flex items-center justify-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                                </svg>
+                                Paste Review on Google
+                            </a>
+                        </div>
+                        <!-- Copied toast -->
+                        <div id="copiedToast" class="hidden fixed bottom-8 left-1/2 -translate-x-1/2 bg-primary-container text-white px-6 py-3 rounded-xl shadow-2xl font-headline font-bold text-sm flex items-center gap-2 z-50 copied-toast">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                            Review copied to clipboard!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Back button (visible after step 1) -->
+            <button type="button" id="backBtn"
+                class="hidden mt-4 text-on-surface-variant hover:text-secondary font-headline font-bold text-sm uppercase tracking-wider transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+                Previous Question
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="w-full pt-16 pb-8 bg-[#112f39] dark:bg-slate-950 text-white dark:text-slate-400 font-['Manrope'] text-sm font-light leading-relaxed">
+        <div class="flex flex-col md:flex-row justify-between items-start px-8 md:px-16 gap-8 max-w-7xl mx-auto">
+            <div class="max-w-xs">
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="assets/logomark.svg" alt="Wander Wheels Logo" class="h-8 w-auto invert brightness-0">
+                    <span class="text-lg font-bold text-white tracking-widest uppercase block">Wander Wheels</span>
+                </div>
+                <p class="text-slate-300">The most trusted bike and scooter rental service in Varkala, Kerala. Ride with
+                    confidence, explore with style.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-secondary uppercase tracking-widest">Fleet</span>
+                    <ul class="space-y-2">
+                        <li><a class="text-slate-300 hover:text-white transition-colors">Honda Activa</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors">Honda dio</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors">Yamaha Ray</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-secondary uppercase tracking-widest">Help</span>
+                    <ul class="space-y-2">
+                        <li><a class="text-slate-300 hover:text-white transition-colors" href="/blogs">Blog</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors" href="/#faq">FAQ</a></li>
+                        <li><a class="text-slate-300 hover:text-white transition-colors" href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mt-16 pt-8 border-t border-white/5 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
+            <p class="text-slate-500">&copy; 2026 Wander Wheels Varkala.</p>
+            <div class="flex gap-6">
+                <a href="https://www.instagram.com/wander_wheels_varkala/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow Wander Wheels on Instagram"
+                    class="text-slate-400 hover:text-secondary-container transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Mobile Menu Toggle ───────────────────────────────────────
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.textContent = isOpen ? 'menu' : 'close';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+            });
+        });
+
+        // ── Review Form Logic ────────────────────────────────────────
+        const answers = {};
+        let currentStep = 0;
+        const totalSteps = 6;
+        let selectedRating = 0;
+
+        const stepPanels = document.querySelectorAll('.step-panel[data-step]');
+        const stepDots = document.querySelectorAll('.step-dot');
+        const backBtn = document.getElementById('backBtn');
+        const resultLow = document.getElementById('resultLow');
+        const resultHigh = document.getElementById('resultHigh');
+
+        // Google Maps Place ID for Wander Wheels — used for the direct review link
+        const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJm4g0MKXpBTsR4JCI9ZYhsrc';
+
+        function showStep(step) {
+            // Hide all step panels and results
+            stepPanels.forEach(p => p.classList.add('hidden'));
+            resultLow.classList.add('hidden');
+            resultHigh.classList.add('hidden');
+
+            // Show the current step
+            const panel = document.querySelector(`.step-panel[data-step="${step}"]`);
+            if (panel) {
+                panel.classList.remove('hidden');
+                // Re-trigger animation
+                panel.classList.remove('fade-in');
+                panel.offsetHeight;
+                panel.classList.add('fade-in');
+            }
+
+            // Update step dots
+            stepDots.forEach((dot, i) => {
+                dot.classList.remove('active', 'done');
+                if (i < step) dot.classList.add('done');
+                else if (i === step) dot.classList.add('active');
+            });
+
+            // Show/hide back button
+            if (step > 0) {
+                backBtn.classList.remove('hidden');
+                backBtn.classList.add('flex');
+            } else {
+                backBtn.classList.add('hidden');
+                backBtn.classList.remove('flex');
+            }
+
+            currentStep = step;
+        }
+
+        // Option button clicks
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const question = btn.dataset.question;
+                const value = btn.dataset.value;
+
+                // Deselect siblings
+                btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+
+                answers[question] = value;
+
+                // Auto-advance after a short delay
+                setTimeout(() => {
+                    showStep(currentStep + 1);
+                }, 300);
+            });
+        });
+
+        // Star rating
+        const starBtns = document.querySelectorAll('.star-btn');
+        const ratingLabel = document.getElementById('ratingLabel');
+        const submitRatingBtn = document.getElementById('submitRating');
+        const ratingLabels = ['', 'Very Poor', 'Poor', 'Average', 'Great', 'Excellent!'];
+
+        starBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                selectedRating = parseInt(btn.dataset.star);
+                starBtns.forEach((b, i) => {
+                    if (i < selectedRating) b.classList.add('active');
+                    else b.classList.remove('active');
+                });
+                ratingLabel.textContent = ratingLabels[selectedRating];
+                submitRatingBtn.disabled = false;
+                submitRatingBtn.classList.remove('opacity-40', 'pointer-events-none');
+            });
+        });
+
+        // Submit rating
+        submitRatingBtn.addEventListener('click', () => {
+            // Hide step indicator and back button
+            document.getElementById('stepIndicator').classList.add('hidden');
+            backBtn.classList.add('hidden');
+            backBtn.classList.remove('flex');
+
+            // Hide current step
+            stepPanels.forEach(p => p.classList.add('hidden'));
+
+            if (selectedRating < 5) {
+                resultLow.classList.remove('hidden');
+                resultLow.classList.remove('fade-in');
+                resultLow.offsetHeight;
+                resultLow.classList.add('fade-in');
+            } else {
+                // Generate review text
+                const review = generateReview();
+                document.getElementById('generatedReview').textContent = review;
+                document.getElementById('googleReviewLink').href = GOOGLE_REVIEW_URL;
+
+                resultHigh.classList.remove('hidden');
+                resultHigh.classList.remove('fade-in');
+                resultHigh.offsetHeight;
+                resultHigh.classList.add('fade-in');
+            }
+        });
+
+        // Generate review from answers — picks random variations so each review feels unique
+        function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+        function generateReview() {
+            const parts = [];
+
+            // Opening — many natural variations
+            const openers = [
+                'Had an amazing experience renting from Wander Wheels in Varkala!',
+                'Rented a scooter from Wander Wheels during my Varkala trip and it was fantastic!',
+                'Just returned from Varkala and Wander Wheels made the trip so much better.',
+                'If you\'re looking for a bike rental in Varkala, Wander Wheels is the one.',
+                'Wander Wheels really made our Varkala vacation hassle-free.',
+                'Best decision of our Varkala trip was renting from Wander Wheels.',
+                'Loved the whole experience with Wander Wheels in Varkala!',
+                'Our Varkala trip was made so much easier thanks to Wander Wheels.',
+                'Used Wander Wheels for our two-wheeler rental in Varkala — couldn\'t be happier.',
+                'Wander Wheels was exactly what we needed to explore Varkala freely.',
+                'Booked a scooter from Wander Wheels and it turned out to be the highlight of our trip.',
+                'Came across Wander Wheels online and so glad we chose them for our Varkala ride.',
+                'Wander Wheels took all the stress out of getting around Varkala.',
+                'We needed a reliable bike rental in Varkala and Wander Wheels delivered perfectly.',
+                'Shoutout to Wander Wheels for making our Varkala holiday unforgettable!',
+                'Explored every corner of Varkala thanks to Wander Wheels — absolute legends.',
+                'First time renting a scooter in Varkala and Wander Wheels made it super easy.',
+                'Can\'t imagine doing Varkala without Wander Wheels now — that\'s how good they are.',
+                'Wander Wheels gave us the freedom to explore Varkala at our own pace.',
+                'Stumbled upon Wander Wheels and it was the best find of our trip.'
+            ];
+            parts.push(pick(openers));
+
+            // Bike condition
+            if (answers.bikeCondition) {
+                const conditionOptions = {
+                    'Excellent — looked brand new': [
+                        'The scooter was in mint condition, felt like riding a brand new vehicle.',
+                        'Bike looked and felt brand new — spotless and smooth.',
+                        'The vehicle they gave us was in pristine shape, really well kept.',
+                        'Scooter was sparkling clean and ran perfectly from the start.',
+                        'Got a bike that looked practically unused — impressive quality.',
+                        'The two-wheeler was in showroom condition, not a scratch on it.',
+                        'Honestly surprised by how new the scooter felt — super well maintained.',
+                        'The bike was gleaming and the engine purred like it just rolled off the lot.',
+                        'You could tell the vehicle was taken care of — everything from the tyres to the mirrors was spotless.',
+                        'Received a scooter that looked factory-fresh, really sets them apart from other rentals.',
+                        'The condition of the bike blew me away — felt like I was the first person to ride it.',
+                        'Never expected a rental bike to be this clean and well-maintained. Top marks.'
+                    ],
+                    'Good — well maintained': [
+                        'The bike was well maintained and rode really smoothly.',
+                        'Vehicle was in solid condition — clean, serviced, and ready to go.',
+                        'The scooter was clearly well looked after, no issues at all.',
+                        'Good condition bike, you can tell they maintain their fleet regularly.',
+                        'The scooter ran smoothly the entire time, clearly serviced recently.',
+                        'No complaints about the bike — it was clean, well-oiled, and reliable.',
+                        'The vehicle was in good shape, tyres were fresh and brakes felt solid.',
+                        'Bike was well kept and didn\'t give us any trouble during the entire rental.',
+                        'Could see the bike was properly maintained — rode without a single hiccup.',
+                        'The scooter was in great working condition, everything felt tight and responsive.'
+                    ],
+                    'Average — had some wear': [
+                        'The vehicle was decent, had some wear but ran fine.',
+                        'Bike was okay — a few signs of use but nothing major.'
+                    ],
+                    'Poor — needs improvement': []
+                };
+                const opts = conditionOptions[answers.bikeCondition] || [];
+                if (opts.length) parts.push(pick(opts));
+            }
+
+            // Pickup experience
+            if (answers.pickupExperience) {
+                const pickupOptions = {
+                    'Super smooth and on time': [
+                        'Pickup and drop-off were perfectly on time, zero waiting.',
+                        'They were right on time for both pickup and return — super smooth.',
+                        'The whole pickup process was seamless, no delays whatsoever.',
+                        'Delivery was bang on time and the return was just as easy.',
+                        'On-time delivery and the drop-off took barely two minutes.',
+                        'They showed up exactly when they said they would — punctuality on point.',
+                        'Both pickup and drop-off happened like clockwork, really impressed.',
+                        'Not a minute late — they arrived right on schedule with the scooter ready.',
+                        'The timing was perfect, they even called ahead to confirm which was a nice touch.',
+                        'Smooth as butter — showed up on time, quick handover, and the return was equally effortless.',
+                        'Pickup was at our doorstep right on the dot. Return was just as seamless.',
+                        'They delivered the bike exactly when promised, no back and forth needed.'
+                    ],
+                    'Quick and hassle-free': [
+                        'The entire process from booking to return was completely hassle-free.',
+                        'Quick handover, no unnecessary paperwork — just simple and easy.',
+                        'Got the keys in minutes, the whole thing was super quick.',
+                        'Hassle-free experience from start to finish, really appreciated that.',
+                        'Booking was a breeze and we had the scooter within minutes of arriving.',
+                        'No drama, no fuss — just a clean, quick rental process.',
+                        'Everything was sorted over WhatsApp and the pickup was lightning fast.',
+                        'The process was so straightforward — book, show up, ride. That simple.',
+                        'Minimal paperwork, quick verification, and we were on the road in no time.',
+                        'From the first message to getting the keys, everything was fast and simple.',
+                        'Loved how easy the whole thing was — no running around or waiting.',
+                        'Fastest rental process I\'ve experienced — they really value your time.'
+                    ],
+                    'Had to wait a bit but okay': [
+                        'Had a short wait at pickup but everything else was smooth.',
+                        'Pickup took a bit longer than expected but they were apologetic about it.'
+                    ],
+                    'Needs improvement': []
+                };
+                const opts = pickupOptions[answers.pickupExperience] || [];
+                if (opts.length) parts.push(pick(opts));
+            }
+
+            // Customer support
+            if (answers.customerSupport) {
+                const supportOptions = {
+                    'Friendly and very helpful': [
+                        'The team was super friendly and went out of their way to help.',
+                        'Really warm and helpful people — they even suggested the best routes to take.',
+                        'The staff was genuinely friendly, made us feel very comfortable.',
+                        'These guys are really helpful, answered all our questions patiently.',
+                        'Loved how approachable and helpful the team was throughout.',
+                        'The owner was incredibly kind and gave us great tips about places to visit.',
+                        'They treated us less like customers and more like friends — really genuine people.',
+                        'Such a welcoming team! They helped us plan our route and even shared local food recommendations.',
+                        'The guys running this are super chill and accommodating — nothing was too much trouble.',
+                        'Had a great chat with the team, they clearly love what they do and it shows.',
+                        'Really nice people to deal with — friendly, patient, and always available when we needed help.',
+                        'The personal touch they add to the service is what makes them stand out from others.'
+                    ],
+                    'Responsive and professional': [
+                        'Very professional service, they responded quickly to all our queries.',
+                        'Communication was prompt and professional — no chasing needed.',
+                        'Customer support was top-notch, quick replies and clear info.',
+                        'Professional team, everything was communicated clearly upfront.',
+                        'Got instant replies on WhatsApp every time we reached out — very professional.',
+                        'They handled everything professionally, from booking confirmation to return instructions.',
+                        'Prompt communication and clear instructions — you can tell they run a tight operation.',
+                        'Every question was answered within minutes, which gave us a lot of confidence.',
+                        'Professional and efficient — they kept us informed at every step.',
+                        'The level of professionalism was unexpected for a local rental — really well run.',
+                        'Quick, clear, and courteous communication throughout. No complaints at all.',
+                        'Responsive even late in the evening when we had a last-minute query. Impressive.'
+                    ],
+                    'Okay but could be better': [],
+                    'Not satisfactory': []
+                };
+                const opts = supportOptions[answers.customerSupport] || [];
+                if (opts.length) parts.push(pick(opts));
+            }
+
+            // Value for money
+            if (answers.valueForMoney) {
+                const valueOptions = {
+                    'Great value — totally worth it': [
+                        'The rates are very affordable for what you get — totally worth it.',
+                        'Pricing was super reasonable, especially compared to other rentals in the area.',
+                        'Great value for money, you won\'t find better rates in Varkala.',
+                        'Really happy with the pricing — fair and transparent, no hidden charges.',
+                        'The price-to-quality ratio is excellent here.',
+                        'For the quality of the bike and service, the price is a steal honestly.',
+                        'We compared a few options and Wander Wheels had the best rates by far.',
+                        'Affordable, honest pricing with no last-minute add-ons. Refreshing!',
+                        'You get a lot more than what you pay for here — helmets, support, everything included.',
+                        'Best bang for your buck rental in Varkala, period.',
+                        'The pricing is very competitive and you can tell they\'re not trying to rip off tourists.',
+                        'Pleasantly surprised by how affordable it was for the quality of service we got.'
+                    ],
+                    'Fair pricing': [
+                        'Pricing was fair and upfront with no surprises.',
+                        'Rates are reasonable and clearly communicated beforehand.',
+                        'Good transparent pricing, what they quote is what you pay.',
+                        'The cost was justified for the service provided — no hidden fees.',
+                        'Fair and straightforward pricing, appreciated the honesty.',
+                        'Reasonable rates with complete transparency — exactly as quoted.',
+                        'No surprise charges at the end, which is always a relief.',
+                        'They told us the exact cost upfront and that\'s exactly what we paid.'
+                    ],
+                    'A bit expensive': [],
+                    'Overpriced': []
+                };
+                const opts = valueOptions[answers.valueForMoney] || [];
+                if (opts.length) parts.push(pick(opts));
+            }
+
+            // Recommendation — closing line
+            if (answers.recommend) {
+                const recOptions = {
+                    'Absolutely, 100%!': [
+                        'Highly recommend Wander Wheels to anyone visiting Varkala!',
+                        '10/10 would rent from them again. Go for it!',
+                        'If you\'re heading to Varkala, just book with these guys — you won\'t regret it.',
+                        'Absolutely recommended! Will definitely use them on our next visit.',
+                        'Can\'t recommend them enough — perfect for exploring Varkala.',
+                        'Five stars, hands down. Book with confidence!',
+                        'Already told all my friends about them — that\'s how good they are.',
+                        'Do yourself a favour and just book with Wander Wheels. Trust me.',
+                        'Will be coming back to Varkala just so we can rent from them again!',
+                        'Take it from me — skip the other options and go straight to Wander Wheels.',
+                        'Two thumbs up! Would choose them again without thinking twice.',
+                        'Easily the best rental experience we\'ve had anywhere in Kerala. Go for it!'
+                    ],
+                    'Yes, would recommend': [
+                        'Would definitely recommend to fellow travellers visiting Varkala.',
+                        'Good experience overall, happy to recommend them.',
+                        'Solid choice for bike rentals in Varkala, would suggest to friends.',
+                        'Worth trying out if you need a two-wheeler in Varkala.',
+                        'Would happily point anyone looking for a rental in Varkala their way.',
+                        'A reliable option for getting around Varkala, would recommend.',
+                        'Good service, good bikes — would suggest them to anyone visiting.',
+                        'If you need a scooter in Varkala, these guys are a safe bet.'
+                    ],
+                    'Maybe, depends on the situation': [],
+                    'Probably not': []
+                };
+                const opts = recOptions[answers.recommend] || [];
+                if (opts.length) parts.push(pick(opts));
+            }
+
+            return parts.filter(p => p.length > 0).join(' ');
+        }
+
+        // Copy review
+        document.getElementById('copyReviewBtn').addEventListener('click', () => {
+            const reviewText = document.getElementById('generatedReview').textContent;
+            navigator.clipboard.writeText(reviewText).then(() => {
+                const toast = document.getElementById('copiedToast');
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 2500);
+            });
+        });
+
+        // Back button
+        backBtn.addEventListener('click', () => {
+            if (currentStep > 0) showStep(currentStep - 1);
+        });
+
+        // Initialize
+        showStep(0);
+    </script>
+</body>
+
+</html>
