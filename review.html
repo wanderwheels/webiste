@@ -224,141 +224,11 @@
             <!-- Form Container -->
             <div id="formContainer" class="bg-white rounded-2xl shadow-lg overflow-hidden">
 
-                <!-- Step 1: Bike Condition -->
+                <!-- Step 0: Overall Rating (FIRST) -->
                 <div class="step-panel fade-in" data-step="0">
                     <div class="bg-primary-container px-8 py-5">
-                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 1 of 6</p>
-                        <h2 class="text-xl font-headline font-bold text-white">How was the condition of the bike / scooter?</h2>
-                    </div>
-                    <div class="px-8 py-8 space-y-3">
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Excellent — looked brand new">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">verified</span>
-                            Excellent — looked brand new
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Good — well maintained">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_up</span>
-                            Good — well maintained
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Average — had some wear">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_neutral</span>
-                            Average — had some wear
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Poor — needs improvement">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_down</span>
-                            Poor — needs improvement
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Pickup & Drop-off -->
-                <div class="step-panel fade-in hidden" data-step="1">
-                    <div class="bg-primary-container px-8 py-5">
-                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 2 of 6</p>
-                        <h2 class="text-xl font-headline font-bold text-white">How was the pickup & drop-off experience?</h2>
-                    </div>
-                    <div class="px-8 py-8 space-y-3">
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Super smooth and on time">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">schedule</span>
-                            Super smooth and on time
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Quick and hassle-free">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">bolt</span>
-                            Quick and hassle-free
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Had to wait a bit but okay">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">hourglass_top</span>
-                            Had to wait a bit but okay
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Needs improvement">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">feedback</span>
-                            Needs improvement
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Customer Support -->
-                <div class="step-panel fade-in hidden" data-step="2">
-                    <div class="bg-primary-container px-8 py-5">
-                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 3 of 6</p>
-                        <h2 class="text-xl font-headline font-bold text-white">How was the customer support?</h2>
-                    </div>
-                    <div class="px-8 py-8 space-y-3">
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Friendly and very helpful">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_very_satisfied</span>
-                            Friendly and very helpful
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Responsive and professional">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">support_agent</span>
-                            Responsive and professional
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Okay but could be better">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_neutral</span>
-                            Okay but could be better
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Not satisfactory">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_dissatisfied</span>
-                            Not satisfactory
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 4: Value for Money -->
-                <div class="step-panel fade-in hidden" data-step="3">
-                    <div class="bg-primary-container px-8 py-5">
-                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 4 of 6</p>
-                        <h2 class="text-xl font-headline font-bold text-white">How was the pricing / value for money?</h2>
-                    </div>
-                    <div class="px-8 py-8 space-y-3">
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Great value — totally worth it">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">paid</span>
-                            Great value — totally worth it
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Fair pricing">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">balance</span>
-                            Fair pricing
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="A bit expensive">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">trending_up</span>
-                            A bit expensive
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Overpriced">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">money_off</span>
-                            Overpriced
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 5: Would Recommend -->
-                <div class="step-panel fade-in hidden" data-step="4">
-                    <div class="bg-primary-container px-8 py-5">
-                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 5 of 6</p>
-                        <h2 class="text-xl font-headline font-bold text-white">Would you recommend Wander Wheels to others?</h2>
-                    </div>
-                    <div class="px-8 py-8 space-y-3">
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Absolutely, 100%!">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">favorite</span>
-                            Absolutely, 100%!
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Yes, would recommend">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_up</span>
-                            Yes, would recommend
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Maybe, depends on the situation">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">help</span>
-                            Maybe, depends on the situation
-                        </button>
-                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Probably not">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_down</span>
-                            Probably not
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 6: Overall Rating -->
-                <div class="step-panel fade-in hidden" data-step="5">
-                    <div class="bg-primary-container px-8 py-5">
-                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 6 of 6</p>
-                        <h2 class="text-xl font-headline font-bold text-white">Overall, how would you rate your experience?</h2>
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Step 1</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How would you rate your overall experience?</h2>
                     </div>
                     <div class="px-8 py-10 flex flex-col items-center">
                         <div class="flex gap-2 mb-4" id="starRating">
@@ -382,37 +252,182 @@
                         <button type="button" id="submitRating"
                             class="mt-8 w-full bg-secondary text-white py-4 rounded-xl font-headline font-bold uppercase tracking-wider transition-all hover:opacity-90 active:scale-95 text-sm opacity-40 pointer-events-none"
                             disabled>
-                            Submit Review
+                            Continue
                         </button>
                     </div>
                 </div>
 
-                <!-- Result: Below 5 Stars -->
+                <!-- Step 1: Review Choice (5 stars only) -->
+                <div class="step-panel fade-in hidden" data-step="1">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Thank You!</p>
+                        <h2 class="text-xl font-headline font-bold text-white">Would you like to leave a Google review?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" id="choiceWriteOwn"
+                            class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">edit_note</span>
+                            I'll write my own review
+                        </button>
+                        <button type="button" id="choiceGenerate"
+                            class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+                            Generate a review for me
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Bike Condition -->
+                <div class="step-panel fade-in hidden" data-step="2">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 1 of 5</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the condition of the bike / scooter?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Excellent — looked brand new">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">verified</span>
+                            Excellent — looked brand new
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Good — well maintained">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_up</span>
+                            Good — well maintained
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Average — had some wear">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_neutral</span>
+                            Average — had some wear
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="bikeCondition" data-value="Poor — needs improvement">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_down</span>
+                            Poor — needs improvement
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Pickup & Drop-off -->
+                <div class="step-panel fade-in hidden" data-step="3">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 2 of 5</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the pickup & drop-off experience?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Super smooth and on time">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">schedule</span>
+                            Super smooth and on time
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Quick and hassle-free">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">bolt</span>
+                            Quick and hassle-free
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Had to wait a bit but okay">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">hourglass_top</span>
+                            Had to wait a bit but okay
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="pickupExperience" data-value="Needs improvement">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">feedback</span>
+                            Needs improvement
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Customer Support -->
+                <div class="step-panel fade-in hidden" data-step="4">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 3 of 5</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the customer support?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Friendly and very helpful">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_very_satisfied</span>
+                            Friendly and very helpful
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Responsive and professional">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">support_agent</span>
+                            Responsive and professional
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Okay but could be better">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_neutral</span>
+                            Okay but could be better
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="customerSupport" data-value="Not satisfactory">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">sentiment_dissatisfied</span>
+                            Not satisfactory
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Value for Money -->
+                <div class="step-panel fade-in hidden" data-step="5">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 4 of 5</p>
+                        <h2 class="text-xl font-headline font-bold text-white">How was the pricing / value for money?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Great value — totally worth it">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">paid</span>
+                            Great value — totally worth it
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Fair pricing">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">balance</span>
+                            Fair pricing
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="A bit expensive">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">trending_up</span>
+                            A bit expensive
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="valueForMoney" data-value="Overpriced">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">money_off</span>
+                            Overpriced
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Would Recommend -->
+                <div class="step-panel fade-in hidden" data-step="6">
+                    <div class="bg-primary-container px-8 py-5">
+                        <p class="text-secondary-container font-headline font-bold text-xs uppercase tracking-widest mb-1">Question 5 of 5</p>
+                        <h2 class="text-xl font-headline font-bold text-white">Would you recommend Wander Wheels to others?</h2>
+                    </div>
+                    <div class="px-8 py-8 space-y-3">
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Absolutely, 100%!">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">favorite</span>
+                            Absolutely, 100%!
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Yes, would recommend">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_up</span>
+                            Yes, would recommend
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Maybe, depends on the situation">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">help</span>
+                            Maybe, depends on the situation
+                        </button>
+                        <button type="button" class="option-btn w-full text-left px-5 py-4 border-2 border-outline-variant rounded-xl font-body font-semibold text-on-surface text-sm flex items-center gap-3" data-question="recommend" data-value="Probably not">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">thumb_down</span>
+                            Probably not
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result: Below 5 Stars — redirects to Google Forms -->
                 <div class="step-panel fade-in hidden" id="resultLow">
-                    <div class="px-8 py-16 text-center">
-                        <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings:'FILL' 1;">handshake</span>
+                    <div class="px-8 py-8 md:py-14 text-center">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl md:text-4xl" style="font-variation-settings:'FILL' 1;">handshake</span>
                         </div>
-                        <h2 class="text-2xl font-headline font-extrabold text-primary-container mb-3">Thank You for Your Honest Feedback</h2>
-                        <p class="text-on-surface-variant max-w-sm mx-auto leading-relaxed">
-                            We're sorry the experience wasn't perfect. Your feedback is invaluable — we're committed to making your next ride with Wander Wheels even better.
+                        <h2 class="text-xl md:text-2xl font-headline font-extrabold text-primary-container mb-2">We'll Make It Better</h2>
+                        <p class="text-on-surface-variant text-sm max-w-sm mx-auto leading-relaxed">
+                            We're sorry the experience wasn't perfect. Your feedback means everything to us — please share a few details so we can improve.
                         </p>
-                        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                            <a href="https://wa.me/918129522024?text=Hi%2C%20I%20have%20some%20feedback%20about%20my%20recent%20rental%20experience."
-                                target="_blank"
-                                class="inline-flex items-center justify-center gap-2 bg-primary-container text-white px-6 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-wider transition-all hover:opacity-90 active:scale-95">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Tell Us More
-                            </a>
-                            <a href="/"
-                                class="inline-flex items-center justify-center gap-2 border-2 border-outline-variant text-on-surface-variant px-6 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-wider transition-all hover:border-secondary hover:text-secondary active:scale-95">
-                                Back to Home
+                        <div class="mt-6">
+                            <a href="https://forms.gle/xgKW3SgdcHBCJGoU7" target="_blank"
+                                class="inline-flex items-center justify-center gap-2 bg-secondary text-white w-full px-6 py-4 rounded-xl font-headline font-bold text-sm uppercase tracking-wider transition-all hover:opacity-90 active:scale-95">
+                                <span class="material-symbols-outlined text-lg">feedback</span>
+                                Share Your Feedback
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Result: 5 Stars -->
+                <!-- Result: 5 Stars — Generated Review -->
                 <div class="step-panel fade-in hidden" id="resultHigh">
                     <div class="px-8 py-10">
                         <div class="text-center mb-6">
@@ -463,7 +478,7 @@
 
             </div>
 
-            <!-- Back button (visible after step 1) -->
+            <!-- Back button -->
             <button type="button" id="backBtn"
                 class="hidden mt-4 text-on-surface-variant hover:text-secondary font-headline font-bold text-sm uppercase tracking-wider transition-colors flex items-center gap-1">
                 <span class="material-symbols-outlined text-lg">arrow_back</span>
@@ -540,7 +555,6 @@
         // ── Review Form Logic ────────────────────────────────────────
         const answers = {};
         let currentStep = 0;
-        const totalSteps = 6;
         let selectedRating = 0;
 
         const stepPanels = document.querySelectorAll('.step-panel[data-step]');
@@ -549,34 +563,33 @@
         const resultLow = document.getElementById('resultLow');
         const resultHigh = document.getElementById('resultHigh');
 
-        // Google Maps Place ID for Wander Wheels — used for the direct review link
         const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJm4g0MKXpBTsR4JCI9ZYhsrc';
+        const GOOGLE_FORMS_URL = 'https://forms.gle/xgKW3SgdcHBCJGoU7';
+
+        function animatePanel(panel) {
+            panel.classList.remove('hidden');
+            panel.classList.remove('fade-in');
+            panel.offsetHeight;
+            panel.classList.add('fade-in');
+        }
 
         function showStep(step) {
-            // Hide all step panels and results
             stepPanels.forEach(p => p.classList.add('hidden'));
             resultLow.classList.add('hidden');
             resultHigh.classList.add('hidden');
 
-            // Show the current step
             const panel = document.querySelector(`.step-panel[data-step="${step}"]`);
-            if (panel) {
-                panel.classList.remove('hidden');
-                // Re-trigger animation
-                panel.classList.remove('fade-in');
-                panel.offsetHeight;
-                panel.classList.add('fade-in');
-            }
+            if (panel) animatePanel(panel);
 
-            // Update step dots
+            // Update dots — only show dots for the generate flow (steps 2-6 map to dots 1-5, step 0 is dot 0)
             stepDots.forEach((dot, i) => {
                 dot.classList.remove('active', 'done');
                 if (i < step) dot.classList.add('done');
                 else if (i === step) dot.classList.add('active');
             });
 
-            // Show/hide back button
-            if (step > 0) {
+            // Back button — show from step 2 onwards (survey questions), not on rating or choice steps
+            if (step >= 3) {
                 backBtn.classList.remove('hidden');
                 backBtn.classList.add('flex');
             } else {
@@ -587,26 +600,7 @@
             currentStep = step;
         }
 
-        // Option button clicks
-        document.querySelectorAll('.option-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const question = btn.dataset.question;
-                const value = btn.dataset.value;
-
-                // Deselect siblings
-                btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-                btn.classList.add('selected');
-
-                answers[question] = value;
-
-                // Auto-advance after a short delay
-                setTimeout(() => {
-                    showStep(currentStep + 1);
-                }, 300);
-            });
-        });
-
-        // Star rating
+        // ── Step 0: Star Rating ──────────────────────────────────────
         const starBtns = document.querySelectorAll('.star-btn');
         const ratingLabel = document.getElementById('ratingLabel');
         const submitRatingBtn = document.getElementById('submitRating');
@@ -625,41 +619,64 @@
             });
         });
 
-        // Submit rating
         submitRatingBtn.addEventListener('click', () => {
-            // Hide step indicator and back button
-            document.getElementById('stepIndicator').classList.add('hidden');
-            backBtn.classList.add('hidden');
-            backBtn.classList.remove('flex');
-
-            // Hide current step
-            stepPanels.forEach(p => p.classList.add('hidden'));
-
             if (selectedRating < 5) {
-                resultLow.classList.remove('hidden');
-                resultLow.classList.remove('fade-in');
-                resultLow.offsetHeight;
-                resultLow.classList.add('fade-in');
+                // Below 5 stars — show feedback message then redirect to Google Forms
+                document.getElementById('stepIndicator').classList.add('hidden');
+                stepPanels.forEach(p => p.classList.add('hidden'));
+                animatePanel(resultLow);
             } else {
-                // Generate review text
-                const review = generateReview();
-                document.getElementById('generatedReview').textContent = review;
-                document.getElementById('googleReviewLink').href = GOOGLE_REVIEW_URL;
-
-                resultHigh.classList.remove('hidden');
-                resultHigh.classList.remove('fade-in');
-                resultHigh.offsetHeight;
-                resultHigh.classList.add('fade-in');
+                // 5 stars — show choice: write own or generate
+                showStep(1);
             }
         });
 
-        // Generate review from answers — picks random variations so each review feels unique
+        // ── Step 1: Review Choice (5 stars) ──────────────────────────
+        document.getElementById('choiceWriteOwn').addEventListener('click', () => {
+            // Redirect directly to Google Maps review page
+            window.open(GOOGLE_REVIEW_URL, '_blank');
+        });
+
+        document.getElementById('choiceGenerate').addEventListener('click', () => {
+            // Proceed to survey questions
+            showStep(2);
+        });
+
+        // ── Steps 2-6: Survey Questions (auto-advance) ──────────────
+        document.querySelectorAll('.option-btn[data-question]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const question = btn.dataset.question;
+                const value = btn.dataset.value;
+
+                btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                answers[question] = value;
+
+                setTimeout(() => {
+                    if (currentStep < 6) {
+                        showStep(currentStep + 1);
+                    } else {
+                        // Last question answered — show generated review
+                        document.getElementById('stepIndicator').classList.add('hidden');
+                        backBtn.classList.add('hidden');
+                        backBtn.classList.remove('flex');
+                        stepPanels.forEach(p => p.classList.add('hidden'));
+
+                        const review = generateReview();
+                        document.getElementById('generatedReview').textContent = review;
+                        document.getElementById('googleReviewLink').href = GOOGLE_REVIEW_URL;
+                        animatePanel(resultHigh);
+                    }
+                }, 300);
+            });
+        });
+
+        // ── Review Generator ─────────────────────────────────────────
         function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
         function generateReview() {
             const parts = [];
 
-            // Opening — many natural variations
             const openers = [
                 'Had an amazing experience renting from Wander Wheels in Varkala!',
                 'Rented a scooter from Wander Wheels during my Varkala trip and it was fantastic!',
@@ -684,9 +701,8 @@
             ];
             parts.push(pick(openers));
 
-            // Bike condition
             if (answers.bikeCondition) {
-                const conditionOptions = {
+                const opts = ({
                     'Excellent — looked brand new': [
                         'The scooter was in mint condition, felt like riding a brand new vehicle.',
                         'Bike looked and felt brand new — spotless and smooth.',
@@ -713,19 +729,14 @@
                         'Could see the bike was properly maintained — rode without a single hiccup.',
                         'The scooter was in great working condition, everything felt tight and responsive.'
                     ],
-                    'Average — had some wear': [
-                        'The vehicle was decent, had some wear but ran fine.',
-                        'Bike was okay — a few signs of use but nothing major.'
-                    ],
+                    'Average — had some wear': [],
                     'Poor — needs improvement': []
-                };
-                const opts = conditionOptions[answers.bikeCondition] || [];
+                })[answers.bikeCondition] || [];
                 if (opts.length) parts.push(pick(opts));
             }
 
-            // Pickup experience
             if (answers.pickupExperience) {
-                const pickupOptions = {
+                const opts = ({
                     'Super smooth and on time': [
                         'Pickup and drop-off were perfectly on time, zero waiting.',
                         'They were right on time for both pickup and return — super smooth.',
@@ -754,19 +765,14 @@
                         'Loved how easy the whole thing was — no running around or waiting.',
                         'Fastest rental process I\'ve experienced — they really value your time.'
                     ],
-                    'Had to wait a bit but okay': [
-                        'Had a short wait at pickup but everything else was smooth.',
-                        'Pickup took a bit longer than expected but they were apologetic about it.'
-                    ],
+                    'Had to wait a bit but okay': [],
                     'Needs improvement': []
-                };
-                const opts = pickupOptions[answers.pickupExperience] || [];
+                })[answers.pickupExperience] || [];
                 if (opts.length) parts.push(pick(opts));
             }
 
-            // Customer support
             if (answers.customerSupport) {
-                const supportOptions = {
+                const opts = ({
                     'Friendly and very helpful': [
                         'The team was super friendly and went out of their way to help.',
                         'Really warm and helpful people — they even suggested the best routes to take.',
@@ -797,14 +803,12 @@
                     ],
                     'Okay but could be better': [],
                     'Not satisfactory': []
-                };
-                const opts = supportOptions[answers.customerSupport] || [];
+                })[answers.customerSupport] || [];
                 if (opts.length) parts.push(pick(opts));
             }
 
-            // Value for money
             if (answers.valueForMoney) {
-                const valueOptions = {
+                const opts = ({
                     'Great value — totally worth it': [
                         'The rates are very affordable for what you get — totally worth it.',
                         'Pricing was super reasonable, especially compared to other rentals in the area.',
@@ -831,14 +835,12 @@
                     ],
                     'A bit expensive': [],
                     'Overpriced': []
-                };
-                const opts = valueOptions[answers.valueForMoney] || [];
+                })[answers.valueForMoney] || [];
                 if (opts.length) parts.push(pick(opts));
             }
 
-            // Recommendation — closing line
             if (answers.recommend) {
-                const recOptions = {
+                const opts = ({
                     'Absolutely, 100%!': [
                         'Highly recommend Wander Wheels to anyone visiting Varkala!',
                         '10/10 would rent from them again. Go for it!',
@@ -865,15 +867,14 @@
                     ],
                     'Maybe, depends on the situation': [],
                     'Probably not': []
-                };
-                const opts = recOptions[answers.recommend] || [];
+                })[answers.recommend] || [];
                 if (opts.length) parts.push(pick(opts));
             }
 
             return parts.filter(p => p.length > 0).join(' ');
         }
 
-        // Copy review
+        // ── Copy Review ──────────────────────────────────────────────
         document.getElementById('copyReviewBtn').addEventListener('click', () => {
             const reviewText = document.getElementById('generatedReview').textContent;
             navigator.clipboard.writeText(reviewText).then(() => {
@@ -883,9 +884,9 @@
             });
         });
 
-        // Back button
+        // ── Back Button ──────────────────────────────────────────────
         backBtn.addEventListener('click', () => {
-            if (currentStep > 0) showStep(currentStep - 1);
+            if (currentStep > 2) showStep(currentStep - 1);
         });
 
         // Initialize
